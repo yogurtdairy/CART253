@@ -8,6 +8,7 @@ the purpose of the website (to collect together and show off your prototyping wo
 
 journal
 ---
+[Read my weekly journals here](https://github.com/yogurtdairy/CART253/blob/main/journal.md)
 
 prototypes
 ---
