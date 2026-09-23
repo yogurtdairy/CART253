@@ -1,3 +1,9 @@
+/* Slot Machine prototype!!! by Nikki Tanev
+Was originally planning on having the handle move by switching between two states but I never completed that idea
+*/
+
+
+// unused value for slot handle movement
 let value = 300;
 
 function setup() {
@@ -10,6 +16,7 @@ function draw() {
   slotmachine();
   lucky();
   rectMode(CENTER);
+  //handle red ball
   push();
   fill(255, 0, 0);
   noStroke();
@@ -22,6 +29,7 @@ function draw() {
   pop();
 }
 
+//the main parts that compose the slot machine
 function slotmachine() {
 
   push();
@@ -97,7 +105,7 @@ function slotmachine() {
   pop();
   
 }
-
+// the text elements
   function lucky() {
   push();
   noStroke();
@@ -128,7 +136,7 @@ function slotmachine() {
   pop();
 }
 
-
+//unused handle movement code
 //this is to move the slot machine handle on click
 /*function slotRolling() {
   if (value > 300) {
