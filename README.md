@@ -10,8 +10,13 @@ journal
 ---
 [Read my weekly journals here](https://github.com/yogurtdairy/CART253/blob/main/journal.md)
 
-prototypes
+Prototyping: Instructions
 ---
-screenshot here!!
+### Prototype 1
+![slotmachine](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-09-23%20191015.png?raw=true)
 
 [view prototype 1 here](https://github.com/yogurtdairy/CART253/blob/main/Topics/instructions-prototype-1/template-p5-project/js/slotmachine.js)
+
+### Prototype 2
+### Prototype 3
+
