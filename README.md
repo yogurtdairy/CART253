@@ -12,3 +12,6 @@ journal
 
 prototypes
 ---
+screenshot here!!
+
+[view prototype 1 here](https://github.com/yogurtdairy/CART253/blob/main/Topics/instructions-prototype-1/template-p5-project/js/slotmachine.js)
