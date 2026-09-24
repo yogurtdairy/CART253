@@ -28,5 +28,5 @@ Prototyping: Instructions
 ![landscape](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-09-23%20213117.png?raw=true)
 
 [view prototype 3 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/insctructions-prototype-3/template-p5-project/js/script.js)    |
-[view prototype 3 visual here](https://yogurtdairy.github.io/CART253/Topics/instructions-prototype-3/template-p5-project/)
+[view prototype 3 visual here](https://yogurtdairy.github.io/CART253/Topics/insctructions-prototype-3/template-p5-project)
 
