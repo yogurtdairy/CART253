@@ -1,7 +1,11 @@
+/* Yoyo simulator prototype!!! by Nikki Tanev
+can eventually be developped into a game with a point system...
+*/
+
 function setup() {
   createCanvas(400, 400);
 }
-
+//drawing a yoyo attached to a finger by a string (line)
 function draw() {
   noCursor();
   background("#03b5aa");
@@ -50,6 +54,7 @@ function draw() {
   ellipse(mouseX - 10, mouseY, 20);
   pop();
 
+  // title on screen as if it is a game
   fill(0);
   textAlign(CENTER);
   textStyle(BOLD);
