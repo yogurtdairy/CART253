@@ -19,7 +19,7 @@ tree1();
 }
 
 //there are two trees, this one is bigger
-function tree1() {
+function draw() {
   
   push();
   fill(204,197, 179);
@@ -43,10 +43,6 @@ function tree1() {
   fill(193,251, 220);
   ellipse(355, 300, 180);
   pop();
-}
-
-//there are two trees, this one is smaller
-function tree2() {
 
    push();
   fill(204,197, 179);
@@ -70,16 +66,10 @@ function tree2() {
   fill(193,251, 220);
   ellipse(140, 360, 140);
   pop();
- 
-}
 
-// it is a sun in the corner
-function sun() {
-  
-fill(234, 243, 211)
+  fill(234, 243, 211)
 ellipse(600,0,350)
   
 fill(255, 255, 200)
 ellipse(600,0,300)
-}
 }
