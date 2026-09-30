@@ -9,6 +9,9 @@ let leftwalls = {
   x: -50,
 };
 
+let rightwalls = {
+  x: 450,
+};
 
 function setup() {
   createCanvas(400, 400);
@@ -38,5 +41,32 @@ function draw() {
 
   if (leftwalls.x > width /8) {
     leftwalls.x = -50;
+  }
+
+  
+//_______
+  
+  
+   noStroke();
+  push();
+  fill(255, 0, 0);
+  rect(rightwalls.x, 200, 200, 200);
+  rect(rightwalls.x, 0, 200, 200);
+  rect(rightwalls.x, 400, 200, 200);
+  rect(rightwalls.x +200, 400, 200, 800);
+  pop();
+
+ rightwalls.x -= 0.7;
+
+  push();
+  triangle(rightwalls.x -100, -50, rightwalls.x -100, 50,rightwalls.x -200, 0);
+  triangle(rightwalls.x -100, 50, rightwalls.x -100, 150,rightwalls.x -200, 100);
+  triangle(rightwalls.x -100, 150, rightwalls.x -100, 250,rightwalls.x -200, 200);
+  triangle(rightwalls.x -100, 250, rightwalls.x -100, 350,rightwalls.x -200, 300);
+  triangle(rightwalls.x -100, 350, rightwalls.x -100, 450,rightwalls.x -200, 400);
+  pop();
+  
+   if (rightwalls.x < 350) {
+    rightwalls.x = 450;
   }
 }
