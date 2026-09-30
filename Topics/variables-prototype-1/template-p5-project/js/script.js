@@ -1,24 +1,42 @@
 /**
- * Title of Project
- * Author Name
+ *Teeth gnawing on my flesh yummy
+ * By Nikki Tanev!!
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Set of teeth closing as if biting.
  */
 
-"use strict";
+let leftwalls = {
+  x: -50,
+};
 
-/**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
-*/
+
 function setup() {
-
+  createCanvas(400, 400);
 }
 
-
-/**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
 function draw() {
+  background(160, 0, 0);
+  rectMode(CENTER);
 
+  noStroke();
+  push();
+  fill(255, 0, 0);
+  rect(leftwalls.x, 200, 200, 200);
+  rect(leftwalls.x, 0, 200, 200);
+  rect(leftwalls.x, 400, 200, 200);
+  rect(leftwalls.x - 200, 400, 200, 800);
+  pop();
+
+  leftwalls.x += 0.7;
+
+  push();
+  triangle(leftwalls.x + 100, 0, leftwalls.x + 200, 50, leftwalls.x + 100, 100);
+  triangle(leftwalls.x + 100, 100, leftwalls.x + 200, 150, leftwalls.x + 100, 200);
+  triangle(leftwalls.x + 100, 200, leftwalls.x + 200, 250, leftwalls.x + 100, 300);
+  triangle(leftwalls.x + 100, 300, leftwalls.x + 200, 350, leftwalls.x + 100, 400);
+  pop();
+
+  if (leftwalls.x > width /8) {
+    leftwalls.x = -50;
+  }
 }
