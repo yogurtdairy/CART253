@@ -5,10 +5,12 @@
  * Set of teeth closing as if biting.
  */
 
+
+// x value for left walls that will cause movement
 let leftwalls = {
   x: -50,
 };
-
+// x value for right walls that will cause movement
 let rightwalls = {
   x: 450,
 };
@@ -21,6 +23,7 @@ function draw() {
   background(160, 0, 0);
   rectMode(CENTER);
 
+  // left gums
   noStroke();
   push();
   fill(255, 0, 0);
@@ -32,6 +35,7 @@ function draw() {
 
   leftwalls.x += 0.7;
 
+  //left teeth
   push();
   triangle(leftwalls.x + 100, 0, leftwalls.x + 200, 50, leftwalls.x + 100, 100);
   triangle(leftwalls.x + 100, 100, leftwalls.x + 200, 150, leftwalls.x + 100, 200);
@@ -39,6 +43,7 @@ function draw() {
   triangle(leftwalls.x + 100, 300, leftwalls.x + 200, 350, leftwalls.x + 100, 400);
   pop();
 
+  //restarts once teeth close
   if (leftwalls.x > width /8) {
     leftwalls.x = -50;
   }
@@ -46,7 +51,8 @@ function draw() {
   
 //_______
   
-  
+
+  //right gums
    noStroke();
   push();
   fill(255, 0, 0);
@@ -58,6 +64,7 @@ function draw() {
 
  rightwalls.x -= 0.7;
 
+  //right teeth
   push();
   triangle(rightwalls.x -100, -50, rightwalls.x -100, 50,rightwalls.x -200, 0);
   triangle(rightwalls.x -100, 50, rightwalls.x -100, 150,rightwalls.x -200, 100);
@@ -65,7 +72,8 @@ function draw() {
   triangle(rightwalls.x -100, 250, rightwalls.x -100, 350,rightwalls.x -200, 300);
   triangle(rightwalls.x -100, 350, rightwalls.x -100, 450,rightwalls.x -200, 400);
   pop();
-  
+
+  //restarts once teeth close
    if (rightwalls.x < 350) {
     rightwalls.x = 450;
   }
