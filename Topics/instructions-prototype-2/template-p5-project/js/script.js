@@ -18,6 +18,9 @@ function setup() {
   sun();
 }
 
+function draw() {
+}
+
 //there are two trees, this one is bigger
 function tree1() {
   push();
