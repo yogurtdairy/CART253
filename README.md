@@ -37,7 +37,7 @@ Prototyping: Instructions
 [view prototype 1 visual here](https://yogurtdairy.github.io/CART253/Topics/variables-prototype-1/template-p5-project/)
 
 ### Prototype 2
-![drawing](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-09-30%20225224.png?raw=true)
+![drawing](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-09-30%20234656.png?raw=true)
 
 [view prototype 2 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/variables-prototype-2/template-p5-project/js/script.js)    |
 [view prototype 2 visual here](https://yogurtdairy.github.io/CART253/Topics/variables-prototype-2/template-p5-project/)
