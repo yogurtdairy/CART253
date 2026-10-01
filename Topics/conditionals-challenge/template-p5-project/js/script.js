@@ -1,6 +1,6 @@
 /**
  * Circle Master
- * Nicole Tanev and Sydney Perron
+ * Pippin Barr
  *
  * This will be a program in which the user can push a circle
  * on the canvas using their own circle.
@@ -21,14 +21,18 @@ const user = {
   x: undefined, // will be mouseX
   y: undefined, // will be mouseY
   size: 75,
-  fill: "#000000",
+  filluser: "#ff0000",
 };
 
 const target = {
   x: 300,
   y: 300,
   size: 30,
-  fill: "#ff0000",
+  filltarget: "#000000",
+  fills: {
+    noOverlap: "#000000", // red for no overlap
+    overlap: "#00ff04", // green for overlap
+  },
 };
 
 /**
@@ -43,6 +47,8 @@ function setup() {
  */
 function draw() {
   background("#aaaaaa");
+  textSize(20);
+  text(round(dist(puck.x, puck.y, target.x, target.y) - puck.size/2 - 10) + " pixels away from target", 50, 35); //shows how far we are from target
 
   // Move user circle
   moveUser();
@@ -52,6 +58,7 @@ function draw() {
   drawPuck();
   movePuck();
   drawTarget();
+  touchTarget();
 }
 
 /**
@@ -68,7 +75,7 @@ function moveUser() {
 function drawUser() {
   push();
   noStroke();
-  fill(user.fill);
+  fill(user.filluser);
   ellipse(user.x, user.y, user.size);
   pop();
 }
@@ -117,7 +124,23 @@ function movePuck() {
 function drawTarget() {
   push();
   noStroke();
-  fill(target.fill);
+  fill(target.filltarget);
   ellipse(target.x, target.y, target.size);
   pop();
 }
+
+function touchTarget() {
+  const da = dist(puck.x, puck.y, target.x, target.y);
+  // Check if that distance is smaller than their two radii,
+  // because if it is, they are overlapping by the amazing
+  // power of geometry!
+  const overlape = da < puck.size / 2 + target.size / 2;
+
+  if (overlape) {
+   target.filltarget = target.fills.overlap;
+  }
+  else {
+    target.filltarget = target.fills.No0verlap;
+  }
+}
+
