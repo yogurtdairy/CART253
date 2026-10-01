@@ -1,6 +1,6 @@
 /**
  * Circle Master
- * Pippin Barr
+ * Nicole Tanev and Sydney Perron
  *
  * This will be a program in which the user can push a circle
  * on the canvas using their own circle.
@@ -10,14 +10,18 @@ const puck = {
   x: 200,
   y: 200,
   size: 100,
-  fill: "#ff0000"
+  fill: "#ff0000",
+  fills: {
+    noOverlap: "#ff0000", // red for no overlap
+    overlap: "#00ff00", // green for overlap
+  },
 };
 
 const user = {
   x: undefined, // will be mouseX
   y: undefined, // will be mouseY
   size: 75,
-  fill: "#000000"
+  fill: "#000000",
 };
 
 /**
@@ -32,13 +36,14 @@ function setup() {
  */
 function draw() {
   background("#aaaaaa");
-  
+
   // Move user circle
   moveUser();
-  
+
   // Draw the user and puck
   drawUser();
   drawPuck();
+  movePuck();
 }
 
 /**
@@ -70,3 +75,34 @@ function drawPuck() {
   ellipse(puck.x, puck.y, puck.size);
   pop();
 }
+
+function movePuck() {
+  const d = dist(user.x, user.y, puck.x, puck.y);
+  // Check if that distance is smaller than their two radii,
+  // because if it is, they are overlapping by the amazing
+  // power of geometry!
+  const overlap = d < user.size / 2 + puck.size / 2;
+
+  if (overlap) {
+    if (user.x > puck.x) {
+      //to check if user is on left or right
+      puck.x -= 10;
+    } else {
+      puck.x += 10;
+    }
+  } else {
+    puck.fill = puck.fills.noOverlap;
+  }
+
+  if (overlap) {
+    if (user.y > puck.y) {
+      //to check if user is on left or right
+      puck.y -= 10;
+    } else {
+      puck.y += 10;
+    }
+  } else {
+    puck.fill = puck.fills.noOverlap;
+  }
+}
+
