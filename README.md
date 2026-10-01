@@ -1,9 +1,7 @@
 # Nikki's CART253 repository
 ![stupid banner](https://itsfoss.com/content/images/2023/02/adding-images-markdown.png)
 
-This is Pippin Barr’s coursework repository for CART253.
-
-the purpose of the website (to collect together and show off your prototyping work in this course)
+(Need to rewrite)
 
 
 journal
@@ -33,14 +31,18 @@ Prototyping: Instructions
 # Prototyping: Variables
 
 ### Prototype 1
+![teeth](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-09-30%20225208.png)
 
 [view prototype 1 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/variables-prototype-1/template-p5-project/js/script.js)    |
 [view prototype 1 visual here](https://yogurtdairy.github.io/CART253/Topics/variables-prototype-1/template-p5-project/)
+
 ### Prototype 2
+![drawing](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-09-30%20225224.png)
 
 [view prototype 2 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/variables-prototype-2/template-p5-project/js/script.js)    |
 [view prototype 2 visual here](https://yogurtdairy.github.io/CART253/Topics/variables-prototype-2/template-p5-project/)
 ### Prototype 3
+![apple](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-09-30%20225253.png)
 
 [view prototype 3 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/variables-prototype-3/template-p5-project/js/script.js)    |
 [view prototype 3 visual here](https://yogurtdairy.github.io/CART253/Topics/variables-prototype-3/template-p5-project/)
