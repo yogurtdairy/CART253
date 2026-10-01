@@ -6,6 +6,7 @@
  * The brush has a mind of it's own! It resets every time mouse is pressed.
  */
 
+//variables for the ellipse
 let ball = {
   w: 10,
   h: 10,
@@ -23,8 +24,9 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   ball.w += random(-2, 2);
-  ball.h += random(-2, 2);
+  ball.h += random(-2, 2); // offset for every ellipse to add fuzziness
 
+  // reseting size if too big
   if (ball.w > 50) {
     ball.w = 10;
   }
@@ -33,6 +35,7 @@ function draw() {
     ball.h = 10;
   }
 
+  // reseting color if past 255 or bellow 0, to avoid too much white or black
   if (ball.r > 255) {
     ball.r = 220;
   }
@@ -58,6 +61,7 @@ function mouseDragged() {
   grow();
 }
 
+//resets drawing once mouse gets pressed
 function mousePressed() {
   createCanvas(400, 400);
   background(255);
@@ -65,6 +69,7 @@ function mousePressed() {
   ball.h = 10;
 }
 
+//size and color constanly shift
 function grow() {
   noStroke();
   fill(
