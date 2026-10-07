@@ -9,13 +9,78 @@
 "use strict";
 
 let value = 300;
+let dropOne = undefined;
+let dropTwo = undefined;
+let dropThree = undefined;
+let dropFour = undefined;
 
 function setup() {
   createCanvas(600, 600);
+  background(220);
+  const pOne = random();
+  const pTwo = random();
+  const pThree = random();
+  const pFour = random();
+
+  if (pOne < 0.01) {
+    dropOne = "🦁";
+  }
+  // Between 0.01 and 0.21 means this one is 20% of the time
+  else if (pOne < 0.21) {
+    dropOne = "🐯";
+  }
+  // Between 0.21 and 0.51 means this one is 30% of the time
+  else if (pOne < 0.51) {
+    dropOne = "🐻"
+  }
+  // Between 0.51 and 1.0 means this one is 49% of the time
+  else {
+    dropOne = "🍇"
+  }
+
+  if (pTwo < 0.01) {
+    dropTwo = "🦁";
+  }
+  // Between 0.01 and 0.21 means this one is 20% of the time
+  else if (pTwo < 0.21) {
+    dropTwo = "🐯";
+  }
+  // Between 0.21 and 0.51 means this one is 30% of the time
+  else if (pTwo < 0.51) {
+    dropTwo = "🐻"
+  }
+  // Between 0.51 and 1.0 means this one is 49% of the time
+  else {
+    dropTwo = "🍇"
+  }
+
+  if (pThree < 0.01) {
+    dropThree = "🦁";
+  }
+  // Between 0.01 and 0.21 means this one is 20% of the time
+  else if (pThree < 0.21) {
+    dropThree = "🐯";
+  }
+  // Between 0.21 and 0.51 means this one is 30% of the time
+  else if (pThree < 0.51) {
+    dropThree = "🐻"
+  }
+  // Between 0.51 and 1.0 means this one is 49% of the time
+  else {
+    dropThree = "🍇"
+  }
+
+  if (dropOne === dropTwo && dropTwo === dropThree) {
+   push();
+   noStroke();
+  textSize(40);
+  fill(0, 0, 0);
+  text("YOU WIN!", width/2 -100, 50);
+  pop() 
+}
 }
 
 function draw() {
-  background(220);
   //slotRolling();
   slotmachine();
   lucky();
@@ -108,23 +173,23 @@ function slotmachine() {
 function lucky() {
   push();
   noStroke();
-  textSize(70);
+  textSize(60);
   fill(255, 0, 0);
-  text("7", 211, 325);
+  text(dropOne, 211, 325);
   pop();
 
   push();
   noStroke();
-  textSize(70);
+  textSize(60);
   fill(255, 0, 0);
-  text("7", 281, 325);
+  text(dropTwo, 281, 325);
   pop();
 
   push();
   noStroke();
-  textSize(70);
+  textSize(60);
   fill(255, 0, 0);
-  text("7", 351, 325);
+  text(dropThree, 351, 325);
   pop();
 
   push();
