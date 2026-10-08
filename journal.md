@@ -19,6 +19,10 @@ proof that pages was working as of sept 30th
 This week's process was my smoothest yet, with pages fully collaborating with me and Visual Studio displaying things properly in chrome (yes I did use mostly Visual Studio this time around, with sparse use of p5 to reference some of my older code + Pippin's examples). All 3 of my prototypes ended up being game-like, which was not my original plan. For my third prototype I wanted to make a self contained simulation of mold that grows and has it's behavior influenced by if statements (like eating), but I had a lot of trouble getting the mold to behave as I wanted it to. I think I will keep this idea in the back of my mind for the future because I think this will be much easier to achieve using arrays (I like arrays). I also got to develop my slot machine prototype from the first week by referencing the probability code from Pippin (thank you!!). I am happy with how it works, especially how rare winning the highest prize is (0.000001%) because it is an accurate representation of gambling. The only thing I wish I did differently was making the slot machine roll on click instead of on refresh, because it is incredibly unintuitive right now. Maybe I will make changes to this prototype again in the future, stay tuned!
 I really like conditionals because they make the prototypes feel much more interactive. My last few weeks' prototypes were for the most part doing their own thing in a linear pattern or loop, but now every one of them relies on user interaction (and randomization/probability) to make the magic happen. I think the deeper we go into exploring the different features of JavaScript, the more interactivity we will get to add to our projects, and I am very excited!
 
+![I want to add this](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-10-08%20162158.png?raw=true)
+This is how I want my slot machine to be activated
+
+
 ![gambling](https://github.com/yogurtdairy/CART253/blob/main/images/gambling.jpg?raw=true)
 
 
