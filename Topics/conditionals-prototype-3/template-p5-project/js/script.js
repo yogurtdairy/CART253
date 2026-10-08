@@ -34,10 +34,9 @@ function draw() {
 //knows where you clicked to display your choice
 function mouseClicked() {
   rockpaperscissors();
-
-  if (mouseX < 100) {
-    textAlign(CENTER);
-    textSize(32);
+textAlign(CENTER);
+    textSize(32)
+  if (mouseX < 100) {;
     text("🪨", 200, 300);
   } else if (mouseX > 100 && mouseX < 300) {
     textSize(32);
