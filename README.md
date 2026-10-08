@@ -58,7 +58,11 @@ Prototyping: Instructions
 ### Prototype 2
 ![box game](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-10-07%20225130.png?raw=true)
 
-[view prototype 1 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/conditionals-prototype-2/template-p5-project/js/script.js)    |
-[view prototype 1 visual here](https://yogurtdairy.github.io/CART253/Topics/conditionals-prototype-2/template-p5-project/)
+[view prototype 2 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/conditionals-prototype-2/template-p5-project/js/script.js)    |
+[view prototype 2 visual here](https://yogurtdairy.github.io/CART253/Topics/conditionals-prototype-2/template-p5-project/)
 
 ### Prototype 3
+![rock paper scissors](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-10-08%20013119.png?raw=true)
+
+[view prototype 3 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/conditionals-prototype-3/template-p5-project/js/script.js)    |
+[view prototype 3 visual here](https://yogurtdairy.github.io/CART253/Topics/conditionals-prototype-3/template-p5-project/)
