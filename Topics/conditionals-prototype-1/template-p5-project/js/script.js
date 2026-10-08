@@ -2,8 +2,8 @@
  * Slot machine v2
  * Nicole
  * 
- * This is a continuation of my slot machine prototype
- * I will attempt to make it functional
+ * This is a continuation of my slot machine prototype. It can now roll and display winning messages depending on the rarity of the outcome. 
+ * Referenced Pippin Barr's random() and probability
  */
 
 "use strict";
@@ -14,12 +14,15 @@ let dropTwo = undefined;
 let dropThree = undefined;
 let dropFour = undefined;
 
+/**
+ * Create the canvas
+ */
 function setup() {
   createCanvas(600, 600);
+  // rolls the p value for every slot on refresh
   const pOne = random();
   const pTwo = random();
   const pThree = random();
-  const pFour = random();
 
   if (pOne < 0.01) {
     dropOne = "7️⃣";
@@ -74,9 +77,9 @@ function setup() {
 
 function draw() {
   background(220);
-  //slotRolling();
   slotmachine();
   lucky();
+
   rectMode(CENTER);
   push();
   fill(255, 0, 0);
@@ -89,6 +92,7 @@ function draw() {
   ellipse(498, value - 3, 18, 22);
   pop();
 
+  //checks if all three drops are the same and displays a winning message depending on the rarity of the outcome
   if (dropOne === dropTwo && dropTwo === dropThree) {
     if (dropOne === "7️⃣") {
    push();
@@ -125,7 +129,7 @@ function draw() {
 }
 }
 }
-
+//draws the slot machine
 function slotmachine() {
   push();
   noStroke();
@@ -198,7 +202,7 @@ function slotmachine() {
   ellipse(400, 425, 80, 30);
   pop();
 }
-
+// draws the slots
 function lucky() {
   push();
   noStroke();
@@ -228,24 +232,3 @@ function lucky() {
   text("Jackpot", 230, 180);
   pop();
 }
-
-//this is to move the slot machine handle on click
-/*function slotRolling() {
-  if (value > 300) {
-    textAlign(CENTER, CENTER);
-    textSize(20);
-  }
-  if (value < 300) {
-    textAlign(CENTER, CENTER);
-    textSize(20);
-  } /*
-}
-//this is to move the slot machine handle on click
-/*function mousePressed() {
-  //console.log("mouse click");
-  console.log(value);
-  value += 200;
-  if (value > 500) {
-    value = 300;
-  }
-} */
