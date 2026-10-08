@@ -1,18 +1,19 @@
 /**
- * Title of Project
- * Author Name
+ * Rock Paper Scissors
+ * Nicole
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * A simple but functional game of rock paper scissors. You can pick what you want to play and the computer will randomly pick as well.
  */
 
 "use strict";
 
+// create canvas
 function setup() {
   createCanvas(400, 400);
   background(0);
 }
 
+// draws the text that will not change
 function draw() {
   mouseClicked;
 
@@ -30,12 +31,12 @@ function draw() {
   pop();
 }
 
+//knows where you clicked to display your choice
 function mouseClicked() {
   rockpaperscissors();
 
   if (mouseX < 100) {
     textAlign(CENTER);
-    playedRock = 1;
     textSize(32);
     text("🪨", 200, 300);
   } else if (mouseX > 100 && mouseX < 300) {
@@ -48,6 +49,7 @@ function mouseClicked() {
 }
 
 function rockpaperscissors() {
+    //redraws the backgroud so that the text and choices don't overlap
   background(0);
   let options = ["🪨", "📃", "✂️"];
   let choice = random(options);
@@ -56,6 +58,7 @@ function rockpaperscissors() {
   textSize(32);
   text(choice, 200, 200);
 
+  //checks your choice compared to the computer's and displays the outcome
   if (choice == "📃" && mouseX < 100) {
     text("you lost..", 200, 50);
   } else if (choice == "📃" && mouseX > 100 && mouseX < 300)
