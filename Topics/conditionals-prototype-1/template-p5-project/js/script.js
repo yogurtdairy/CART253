@@ -23,15 +23,15 @@ function setup() {
   const pFour = random();
 
   if (pOne < 0.01) {
-    dropOne = "🦁";
+    dropOne = "7️⃣";
   }
   // Between 0.01 and 0.21 means this one is 20% of the time
   else if (pOne < 0.21) {
-    dropOne = "🐯";
+    dropOne = "🍒";
   }
   // Between 0.21 and 0.51 means this one is 30% of the time
   else if (pOne < 0.51) {
-    dropOne = "🐻"
+    dropOne = "🍋"
   }
   // Between 0.51 and 1.0 means this one is 49% of the time
   else {
@@ -39,15 +39,15 @@ function setup() {
   }
 
   if (pTwo < 0.01) {
-    dropTwo = "🦁";
+    dropTwo = "7️⃣";
   }
   // Between 0.01 and 0.21 means this one is 20% of the time
   else if (pTwo < 0.21) {
-    dropTwo = "🐯";
+    dropTwo = "🍒";
   }
   // Between 0.21 and 0.51 means this one is 30% of the time
   else if (pTwo < 0.51) {
-    dropTwo = "🐻"
+    dropTwo = "🍋"
   }
   // Between 0.51 and 1.0 means this one is 49% of the time
   else {
@@ -55,15 +55,15 @@ function setup() {
   }
 
   if (pThree < 0.01) {
-    dropThree = "🦁";
+    dropThree = "7️⃣";
   }
   // Between 0.01 and 0.21 means this one is 20% of the time
   else if (pThree < 0.21) {
-    dropThree = "🐯";
+    dropThree = "🍒";
   }
   // Between 0.21 and 0.51 means this one is 30% of the time
   else if (pThree < 0.51) {
-    dropThree = "🐻"
+    dropThree = "🍋"
   }
   // Between 0.51 and 1.0 means this one is 49% of the time
   else {
@@ -71,12 +71,35 @@ function setup() {
   }
 
   if (dropOne === dropTwo && dropTwo === dropThree) {
+    if (dropOne === "7️⃣") {
    push();
    noStroke();
   textSize(40);
   fill(0, 0, 0);
-  text("YOU WIN!", width/2 -100, 50);
+  text("YOU WIN A MILLION DOLLARS", width/2 -100, 50);
   pop() 
+} else if (dropOne === "🍒") {
+  push();
+  noStroke();
+  textSize(40);
+  fill(0, 0, 0);
+  text("YOU WIN $1,000", width/2 -100, 50);
+  pop()
+} else if (dropOne === "🍋") {
+  push();
+  noStroke();
+  textSize(40);
+  fill(0, 0, 0);
+  text("YOU WIN $100", width/2 -100, 50);
+  pop()
+} else if (dropOne === "🍇") {
+  push();
+  noStroke();
+  textSize(40);
+  fill(0, 0, 0);
+  text("YOU WIN $1", width/2 -100, 50);
+  pop()
+}
 }
 }
 
