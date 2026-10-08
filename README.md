@@ -50,7 +50,7 @@ Prototyping: Instructions
 # Prototyping: Conditionals
 
 ### Prototype 1
-![slot machine v2](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-09-30%20225208.png?raw=true)
+![slot machine v2](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-10-07%20202722.png?raw=true)
 
 [view prototype 1 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/conditionals-prototype-1/template-p5-project/js/script.js)    |
 [view prototype 1 visual here](https://yogurtdairy.github.io/CART253/Topics/conditionals-prototype-1/template-p5-project/)
