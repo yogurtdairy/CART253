@@ -35,6 +35,10 @@ function draw() {
 
 //  if (keyIsPressed === true) {
  // lose(); 
+
+ if (mouseX > 0.0001 || mouseX < -0.0001) {
+lose();
+ }
 }
 
 /**
@@ -69,5 +73,9 @@ function lose() {
 }
 
 function keyPressed() {
+  lose();
+}
+
+function mousePressed() {
   lose();
 }
