@@ -41,6 +41,9 @@ function draw() {
   textAlign(CENTER);
   textStyle(BOLD);
   textSize(32);
+  text(round(score + 50) + " health points", 200, 40);
+
+  if (score < -50) {text("GAME OVER", 200, 375);}
 }
 
 function checkCollision() {
