@@ -15,3 +15,11 @@ This week thankfully my experience making my prototype was much more forgiving. 
 ![proof that pages was working as of sept 30th](https://raw.githubusercontent.com/yogurtdairy/CART253/214ee21f3a06c4f621d379e845ef9403150b776e/images/Screenshot%202026-09-30%20193541.png)
 proof that pages was working as of sept 30th
 
+## October 8th
+This week's process was my smoothest yet, with pages fully collaborating with me and Visual Studio displaying things properly in chrome (yes I did use mostly Visual Studio this time around, with sparse use of p5 to reference some of my older code + Pippin's examples). All 3 of my prototypes ended up being game-like, which was not my original plan. For my third prototype I wanted to make a self contained simulation of mold that grows and has it's behavior influenced by if statements (like eating), but I had a lot of trouble getting the mold to behave as I wanted it to. I think I will keep this idea in the back of my mind for the future because I think this will be much easier to achieve using arrays (I like arrays). I really like conditionals because they make the prototypes feel much more interactive. My last few weeks' prototypes were for the most part doing their own thing in a linear pattern or loop, but now every one of them relies on user interaction (and randomization/probability) to make the magic happen. I think the deeper we go into exploring the different features of JavaScript, the more interactivity we will get to add to our projects, and I am very excited!
+
+
+
+
+
+Write a journal entry in your process journal reflecting on what you learned while making your prototypes. What surprised you? What is cool? What is difficult to understand? What do you hope someone else would get out of your work? Is there anything here you would be interested to develop further? Include at least one screenshot to illustrate your thoughts. (Minimum 250 words)
