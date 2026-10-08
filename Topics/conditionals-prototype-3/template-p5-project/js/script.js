@@ -19,9 +19,15 @@ function draw() {
   textAlign(CENTER);
   textSize(20);
   fill(255);
-  text("Pick rock", 70, 380);
-  text("Pick scissors", 200, 380);
-  text("Pick paper", 320, 380);
+  text("[Pick rock]", 70, 380);
+  text("[Pick scissors]", 192, 380);
+  text("[Pick paper]", 320, 380);
+
+  push();
+  textSize(20);
+  text("<- your opponent", 300, 200);
+  text("you ->", 146, 300);
+  pop();
 }
 
 function mouseClicked() {
@@ -29,7 +35,7 @@ function mouseClicked() {
 
   if (mouseX < 100) {
     textAlign(CENTER);
-    // playedRock();
+    playedRock = 1;
     textSize(32);
     text("🪨", 200, 300);
   } else if (mouseX > 100 && mouseX < 300) {
@@ -49,4 +55,28 @@ function rockpaperscissors() {
   textAlign(CENTER);
   textSize(32);
   text(choice, 200, 200);
+
+  if (choice == "📃" && mouseX < 100) {
+    text("you lost..", 200, 50);
+  } else if (choice == "📃" && mouseX > 100 && mouseX < 300)
+    text("you won!!", 200, 50);
+  else if (choice == "📃" && mouseX > 300) {
+    text("you tied", 200, 50);
+  }
+
+  if (choice == "🪨" && mouseX < 100) {
+    text("you tied", 200, 50);
+  } else if (choice == "🪨" && mouseX > 100 && mouseX < 300)
+    text("you lost..", 200, 50);
+  else if (choice == "🪨" && mouseX > 300) {
+    text("you won!!", 200, 50);
+  }
+
+  if (choice == "✂️" && mouseX < 100) {
+    text("you won!!", 200, 50);
+  } else if (choice == "✂️" && mouseX > 100 && mouseX < 300)
+    text("you tied", 200, 50);
+  else if (choice == "✂️" && mouseX > 300) {
+    text("you lost..", 200, 50);
+  }
 }
