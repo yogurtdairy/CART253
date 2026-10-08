@@ -39,6 +39,10 @@ function draw() {
  if (mouseX > 0.0001 || mouseX < -0.0001) {
 lose();
  }
+
+ if (mouseY > 0.0001 || mouseY < -0.0001) {
+lose();
+ }
 }
 
 /**
@@ -78,4 +82,8 @@ function keyPressed() {
 
 function mousePressed() {
   lose();
+}
+
+function mouseWheel(){
+ lose();
 }
