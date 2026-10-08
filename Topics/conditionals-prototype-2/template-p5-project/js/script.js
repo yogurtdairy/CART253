@@ -15,6 +15,7 @@ var enmySize = 40;
 var enmyX;
 var enmyY;
 var score = 0;
+var reColors = ["#f94144", "#f3722c", "#f9c74f"];
 
 
 function setup() {
@@ -51,7 +52,7 @@ function checkCollision() {
   offY += 0.02;
   let elX = map(noise(offX), 0, 1, 0, 400);
   let elY = map(noise(offY), 0, 1, 0, 400);
-  fill(0);
+  fill(random(reColors));
   noStroke();
   ellipse(elX, elY, enmySize);
  
