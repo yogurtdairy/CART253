@@ -16,7 +16,6 @@ let dropFour = undefined;
 
 function setup() {
   createCanvas(600, 600);
-  background(220);
   const pOne = random();
   const pTwo = random();
   const pThree = random();
@@ -70,40 +69,11 @@ function setup() {
     dropThree = "🍇"
   }
 
-  if (dropOne === dropTwo && dropTwo === dropThree) {
-    if (dropOne === "7️⃣") {
-   push();
-   noStroke();
-  textSize(40);
-  fill(0, 0, 0);
-  text("YOU WIN A MILLION DOLLARS", width/2 -100, 50);
-  pop() 
-} else if (dropOne === "🍒") {
-  push();
-  noStroke();
-  textSize(40);
-  fill(0, 0, 0);
-  text("YOU WIN $1,000", width/2 -100, 50);
-  pop()
-} else if (dropOne === "🍋") {
-  push();
-  noStroke();
-  textSize(40);
-  fill(0, 0, 0);
-  text("YOU WIN $100", width/2 -100, 50);
-  pop()
-} else if (dropOne === "🍇") {
-  push();
-  noStroke();
-  textSize(40);
-  fill(0, 0, 0);
-  text("YOU WIN $1", width/2 -100, 50);
-  pop()
-}
-}
+  
 }
 
 function draw() {
+  background(220);
   //slotRolling();
   slotmachine();
   lucky();
@@ -118,6 +88,42 @@ function draw() {
   fill(255, 120, 120);
   ellipse(498, value - 3, 18, 22);
   pop();
+
+  if (dropOne === dropTwo && dropTwo === dropThree) {
+    if (dropOne === "7️⃣") {
+   push();
+   noStroke();
+  textSize(40);
+  fill(0, 0, 0);
+  textAlign(CENTER, CENTER);
+  text("YOU WIN A MILLION DOLLARS", width/2, 50);
+  pop() 
+} else if (dropOne === "🍒") {
+  push();
+  noStroke();
+  textSize(40);
+  fill(0, 0, 0);
+  textAlign(CENTER, CENTER);
+  text("YOU WIN $1,000", width/2, 50);
+  pop()
+} else if (dropOne === "🍋") {
+  push();
+  noStroke();
+  textSize(40);
+  fill(0, 0, 0);
+  textAlign(CENTER, CENTER);
+  text("YOU WIN $100", width/2, 50);
+  pop()
+} else if (dropOne === "🍇") {
+  push();
+  noStroke();
+  textSize(40);
+  fill(0, 0, 0);
+  textAlign(CENTER, CENTER);
+  text("YOU WIN $1", width/2, 50);
+  pop()
+}
+}
 }
 
 function slotmachine() {
@@ -198,21 +204,21 @@ function lucky() {
   noStroke();
   textSize(60);
   fill(255, 0, 0);
-  text(dropOne, 211, 325);
+  text(dropOne, 188, 325);
   pop();
 
   push();
   noStroke();
   textSize(60);
   fill(255, 0, 0);
-  text(dropTwo, 281, 325);
+  text(dropTwo, 258, 325);
   pop();
 
   push();
   noStroke();
   textSize(60);
   fill(255, 0, 0);
-  text(dropThree, 351, 325);
+  text(dropThree, 327, 325);
   pop();
 
   push();
