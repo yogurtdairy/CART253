@@ -36,12 +36,12 @@ function mouseClicked() {
   rockpaperscissors();
 textAlign(CENTER);
     textSize(32)
-  if (mouseX < 100) {;
+  if (mouseX < 150) {;
     text("🪨", 200, 300);
-  } else if (mouseX > 100 && mouseX < 300) {
+  } else if (mouseX > 150 && mouseX < 250) {
     textSize(32);
     text("✂️", 200, 300);
-  } else if (mouseX > 300) {
+  } else if (mouseX > 250) {
     textSize(32);
     text("📃", 200, 300);
   }
@@ -58,27 +58,27 @@ function rockpaperscissors() {
   text(choice, 200, 200);
 
   //checks your choice compared to the computer's and displays the outcome
-  if (choice == "📃" && mouseX < 100) {
+  if (choice == "📃" && mouseX < 150) {
     text("you lost..", 200, 50);
-  } else if (choice == "📃" && mouseX > 100 && mouseX < 300)
+  } else if (choice == "📃" && mouseX > 150 && mouseX < 250)
     text("you won!!", 200, 50);
-  else if (choice == "📃" && mouseX > 300) {
+  else if (choice == "📃" && mouseX > 250) {
     text("you tied", 200, 50);
   }
 
-  if (choice == "🪨" && mouseX < 100) {
+  if (choice == "🪨" && mouseX < 150) {
     text("you tied", 200, 50);
-  } else if (choice == "🪨" && mouseX > 100 && mouseX < 300)
+  } else if (choice == "🪨" && mouseX > 150 && mouseX < 250)
     text("you lost..", 200, 50);
-  else if (choice == "🪨" && mouseX > 300) {
+  else if (choice == "🪨" && mouseX > 250) {
     text("you won!!", 200, 50);
   }
 
-  if (choice == "✂️" && mouseX < 100) {
+  if (choice == "✂️" && mouseX < 150) {
     text("you won!!", 200, 50);
-  } else if (choice == "✂️" && mouseX > 100 && mouseX < 300)
+  } else if (choice == "✂️" && mouseX > 150 && mouseX < 250)
     text("you tied", 200, 50);
-  else if (choice == "✂️" && mouseX > 300) {
+  else if (choice == "✂️" && mouseX > 250) {
     text("you lost..", 200, 50);
   }
 }
