@@ -13,22 +13,22 @@ let dropOne = undefined;
 let dropTwo = undefined;
 let dropThree = undefined;
 let dropFour = undefined;
+let currency = 20;
 
 /**
  * Create the canvas
  */
 function setup() {
   createCanvas(600, 600);
-  // rolls the p value for every slot on refresh
-  
-
-  
-
   
 }
 
 function draw() {
+noLoop();
   background(220);
+
+  textSize(20);
+  text(round(currency) + "$ in bank account", 370, 35);
   slotmachine();
   lucky();
 
@@ -52,38 +52,44 @@ function draw() {
   textSize(40);
   fill(0, 0, 0);
   textAlign(CENTER, CENTER);
-  text("YOU WIN A MILLION DOLLARS", width/2, 50);
+  text("YOU WIN A MILLION DOLLARS", width/2, 70);
   pop() 
+  currency+=1000001;
 } else if (dropOne === "🍒") {
   push();
   noStroke();
   textSize(40);
   fill(0, 0, 0);
   textAlign(CENTER, CENTER);
-  text("YOU WIN $1,000", width/2, 50);
+  text("YOU WIN $1,000", width/2, 70);
   pop()
+  currency+=1001;
 } else if (dropOne === "🍋") {
   push();
   noStroke();
   textSize(40);
   fill(0, 0, 0);
   textAlign(CENTER, CENTER);
-  text("YOU WIN $100", width/2, 50);
+  text("YOU WIN $100", width/2, 70);
   pop()
+  currency+=101;
 } else if (dropOne === "🍇") {
   push();
   noStroke();
   textSize(40);
   fill(0, 0, 0);
   textAlign(CENTER, CENTER);
-  text("YOU WIN $1", width/2, 50);
+  text("YOU WIN $2", width/2, 70);
   pop()
+  currency+=3;
 }
 }
 }
 
 function mousePressed() {
-
+loop();
+currency--;
+// rolls the p value for every slot on refresh
 const pOne = random();
   const pTwo = random();
   const pThree = random();
