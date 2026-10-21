@@ -1,24 +1,243 @@
 /**
- * Title of Project
- * Author Name
+ * Slot machine v2
+ * Nicole
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * This is a continuation of my slot machine prototype. It can now roll and display winning messages depending on the rarity of the outcome. 
+ * Referenced Pippin Barr's random() and probability
  */
 
 "use strict";
 
-/**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
-*/
-function setup() {
+let value = 300;
+let dropOne = undefined;
+let dropTwo = undefined;
+let dropThree = undefined;
+let dropFour = undefined;
 
+/**
+ * Create the canvas
+ */
+function setup() {
+  createCanvas(600, 600);
+  // rolls the p value for every slot on refresh
+  
+
+  
+
+  
+}
+
+function draw() {
+  background(220);
+  slotmachine();
+  lucky();
+
+  rectMode(CENTER);
+  push();
+  fill(255, 0, 0);
+  noStroke();
+  ellipse(500, value, 40);
+  pop();
+  push();
+  noStroke();
+  fill(255, 120, 120);
+  ellipse(498, value - 3, 18, 22);
+  pop();
+
+  //checks if all three drops are the same and displays a winning message depending on the rarity of the outcome
+  if (dropOne === dropTwo && dropTwo === dropThree) {
+    if (dropOne === "7️⃣") {
+   push();
+   noStroke();
+  textSize(40);
+  fill(0, 0, 0);
+  textAlign(CENTER, CENTER);
+  text("YOU WIN A MILLION DOLLARS", width/2, 50);
+  pop() 
+} else if (dropOne === "🍒") {
+  push();
+  noStroke();
+  textSize(40);
+  fill(0, 0, 0);
+  textAlign(CENTER, CENTER);
+  text("YOU WIN $1,000", width/2, 50);
+  pop()
+} else if (dropOne === "🍋") {
+  push();
+  noStroke();
+  textSize(40);
+  fill(0, 0, 0);
+  textAlign(CENTER, CENTER);
+  text("YOU WIN $100", width/2, 50);
+  pop()
+} else if (dropOne === "🍇") {
+  push();
+  noStroke();
+  textSize(40);
+  fill(0, 0, 0);
+  textAlign(CENTER, CENTER);
+  text("YOU WIN $1", width/2, 50);
+  pop()
+}
+}
+}
+
+function mousePressed() {
+
+const pOne = random();
+  const pTwo = random();
+  const pThree = random();
+
+if (pOne < 0.01) {
+    dropOne = "7️⃣";
+  }
+  // Between 0.01 and 0.21 means this one is 20% of the time
+  else if (pOne < 0.21) {
+    dropOne = "🍒";
+  }
+  // Between 0.21 and 0.51 means this one is 30% of the time
+  else if (pOne < 0.51) {
+    dropOne = "🍋"
+  }
+  // Between 0.51 and 1.0 means this one is 49% of the time
+  else {
+    dropOne = "🍇"
+  }
+
+  if (pTwo < 0.01) {
+    dropTwo = "7️⃣";
+  }
+  // Between 0.01 and 0.21 means this one is 20% of the time
+  else if (pTwo < 0.21) {
+    dropTwo = "🍒";
+  }
+  // Between 0.21 and 0.51 means this one is 30% of the time
+  else if (pTwo < 0.51) {
+    dropTwo = "🍋"
+  }
+  // Between 0.51 and 1.0 means this one is 49% of the time
+  else {
+    dropTwo = "🍇"
+  }
+
+  if (pThree < 0.01) {
+    dropThree = "7️⃣";
+  }
+  // Between 0.01 and 0.21 means this one is 20% of the time
+  else if (pThree < 0.21) {
+    dropThree = "🍒";
+  }
+  // Between 0.21 and 0.51 means this one is 30% of the time
+  else if (pThree < 0.51) {
+    dropThree = "🍋"
+  }
+  // Between 0.51 and 1.0 means this one is 49% of the time
+  else {
+    dropThree = "🍇"
+  }
 }
 
 
-/**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
-function draw() {
+//draws the slot machine
+function slotmachine() {
+  push();
+  noStroke();
+  fill(255, 208, 0);
+  ellipse(300, 212, 250, 200);
+  pop();
 
+  push();
+  noStroke();
+  fill(255, 255, 0);
+  ellipse(300, 222, 230, 200);
+  pop();
+
+  push();
+  noStroke();
+  fill(255, 255, 0);
+  rect(300, 470, 350, 140);
+  pop();
+
+  push();
+  strokeWeight(20);
+  line(400, 390, 500, 300);
+  pop();
+
+  push();
+  noStroke();
+  fill(255, 208, 0);
+  rect(300, 300, 250, 200);
+  pop();
+
+  push();
+  fill(255, 255, 255);
+  strokeWeight(4);
+  rect(230, 300, 70, 100);
+  pop();
+
+  push();
+  fill(255, 255, 255);
+  strokeWeight(4);
+  rect(300, 300, 70, 100);
+  pop();
+
+  push();
+  fill(255, 255, 255);
+  strokeWeight(4);
+  rect(370, 300, 70, 100);
+  pop();
+
+  push();
+  fill(0, 0, 0);
+  strokeWeight(4);
+  rect(300, 480, 150, 50);
+  pop();
+
+  push();
+  noStroke();
+  fill(255, 0, 0);
+  ellipse(200, 425, 80, 30);
+  pop();
+
+  push();
+  noStroke();
+  fill(0, 255, 0);
+  ellipse(300, 425, 80, 30);
+  pop();
+
+  push();
+  noStroke();
+  fill(0, 0, 255);
+  ellipse(400, 425, 80, 30);
+  pop();
+}
+// draws the slots
+function lucky() {
+  push();
+  noStroke();
+  textSize(60);
+  fill(255, 0, 0);
+  text(dropOne, 188, 325);
+  pop();
+
+  push();
+  noStroke();
+  textSize(60);
+  fill(255, 0, 0);
+  text(dropTwo, 258, 325);
+  pop();
+
+  push();
+  noStroke();
+  textSize(60);
+  fill(255, 0, 0);
+  text(dropThree, 327, 325);
+  pop();
+
+  push();
+  noStroke();
+  textSize(40);
+  fill(0, 0, 0);
+  text("Jackpot", 230, 180);
+  pop();
 }
