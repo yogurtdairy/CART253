@@ -49,6 +49,7 @@ noLoop();
   fill(255, 120, 120);
   ellipse(498, value - 3, 18, 22);
   pop();
+  
 
 
   //checks if all three drops are the same and displays a winning message depending on the rarity of the outcome
@@ -63,6 +64,18 @@ strokeWeight(2);
   text("YOU WIN A MILLION DOLLARS", width/2, 70);
   pop() 
   currency+=1000001;
+  push();
+  noStroke();
+  fill('orange');
+  ellipse(280,500,300);
+  ellipse(320,480,300);
+  ellipse(310,492,300);
+  ellipse(250,488,300);
+  ellipse(270,468,300);
+  ellipse(350,465,300);
+  ellipse(370,490,300);
+  pop();
+  
 } else if (dropOne === "🍒") {
   push();
   textSize(40);
@@ -72,7 +85,18 @@ strokeWeight(2);
 strokeWeight(2);
   text("YOU WIN $1,000", width/2, 90);
   pop()
-  currency+=1001;
+  currency+=1001;push();
+  noStroke();
+  fill('orange');
+  ellipse(280,500,70);
+  ellipse(320,480,70);
+  ellipse(310,492,70);
+  ellipse(250,488,70);
+  ellipse(270,468,70);
+  ellipse(350,465,70);
+  ellipse(370,490,70);
+  pop();
+
 } else if (dropOne === "🍋") {
   push();
   textSize(40);
@@ -83,6 +107,18 @@ strokeWeight(2);
   text("YOU WIN $100", width/2, 90);
   pop()
   currency+=101;
+   push();
+  noStroke();
+  fill('orange');
+  ellipse(280,500,30);
+  ellipse(320,480,30);
+  ellipse(310,492,30);
+  ellipse(250,488,30);
+  ellipse(270,468,30);
+  ellipse(350,465,30);
+  ellipse(370,490,30);
+  pop();
+
 } else if (dropOne === "🍇") {
   push();
   textSize(40);
@@ -93,6 +129,12 @@ strokeWeight(2);
   text("YOU WIN $2", width/2, 90);
   pop()
   currency+=3;
+  push();
+  noStroke();
+  fill('orange');
+  ellipse(280,500,30);
+  ellipse(320,480,30);
+  pop();
 }
 }
 }
