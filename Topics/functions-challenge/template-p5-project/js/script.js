@@ -1,6 +1,6 @@
 /**
  * Bouncy Ball Ball Bonanza
- * Pippin Barr
+ * Pippin Barr, Nicole Tanev, Sydney Perron
  * 
  * The starting point for a ball-bouncing experience of
  * epic proportions!
