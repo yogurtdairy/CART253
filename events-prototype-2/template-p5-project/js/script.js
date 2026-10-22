@@ -15,7 +15,7 @@ const tileSize = 32;
 const rows = 10;
 const columns = 10;
 
-const backgroundColour = "#327112";
+const backgroundColour = "#0b8028";
 
 // The player
 const player = {
@@ -85,6 +85,9 @@ function draw() {
   push();
   strokeWeight(5);
   line(0, tileSize * 7, tileSize * 10, tileSize * 7);
+  line(0, tileSize * 4, tileSize * 10, tileSize * 4);
+  line(0, tileSize * 1, tileSize * 10, tileSize * 1);
+  line(tileSize * 1.5, 0, tileSize * 1.5, tileSize * 10);
   pop();
   
   // Check if the player got the coin (i.e. is in the same location)
@@ -100,6 +103,21 @@ function draw() {
   }  
   
   // The player
+
+push();
+textSize(50);
+ fill('white');
+  text('1', tileSize * 2, tileSize * 3);
+  text('2', tileSize * 2, tileSize * 6);
+  text('3', tileSize * 2, tileSize * 9);
+  pop();
+
+  push();
+  textSize(10)
+ text('you are cyan, click to start/pause, spam D key to move', 60, 19);
+  pop();
+
+
   push();
   noStroke();
   fill(player.fill);
@@ -133,7 +151,7 @@ function keyPressed(event) {
     x: 0,
     y: 0
   };
-  if (event.keyCode === RIGHT_ARROW && !opponentStart) {
+  if (event.keyCode === 68 && !opponentStart) {
     move.x = random(-0.1,4);
   }
   else if (event.keyCode === LEFT_ARROW) {
