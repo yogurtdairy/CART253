@@ -1,11 +1,13 @@
 /**
- * Tile Based Movement
- * Pippin Barr
+ * Track and Field
+ * Nicole Tanev
  *
- * Move a shape around with the keys, eat a coin
+ * Use the D key to propel your racer forward againt your opponents
+ * referenced Tile Based Movement by Pippin Barr
  */
 
 
+// Boolean that controls opponent movement start/stop
 let opponentStart = true;
 
 // The size of a single tile
@@ -25,7 +27,6 @@ let player = {
   size: tileSize,
   // Colour
   fill: "#87ceeb",
-  // Sound effect
 };
 
 const opponentOne = {
@@ -35,7 +36,6 @@ const opponentOne = {
   size: tileSize,
   // Colour
   fill: "#f3260b",
-  // Sound effect
 };
 
 const opponentTwo = {
@@ -45,30 +45,7 @@ const opponentTwo = {
   size: tileSize,
   // Colour
   fill: "#f30bef",
-  // Sound effect
 };
-
-const finishLine = {
-x: tileSize * 9 ,
-}
-
-// The coin
-const coin = {
-  // Position and size
-  x: tileSize * 5,
-  y: tileSize * 6,
-  size: tileSize,
-  // Colour
-  fill: "#ceeb87",
-  // Has it been picked up yet?
-  collected: false,
-  // Sound effect
-
-};
-
-/**
- * Load the coin collection and player move sounds
- */
 
 /**
  * Create the canvas
@@ -87,29 +64,19 @@ function draw() {
   background(backgroundColour);
 
   push();
+  // track lines to seperate runners
   strokeWeight(5);
   line(0, tileSize * 7, tileSize * 10, tileSize * 7);
   line(0, tileSize * 4, tileSize * 10, tileSize * 4);
   line(0, tileSize * 1, tileSize * 10, tileSize * 1);
-  line(tileSize * 1.5, 35, tileSize * 1.5, tileSize * 10);
 
+  //start and finish lines
+  line(tileSize * 1.5, 35, tileSize * 1.5, tileSize * 10);
   line(tileSize *9, 35, tileSize * 9, tileSize * 10);
   pop();
   
-  // Check if the player got the coin (i.e. is in the same location)
-  // Collect it and play the sound if so
-  if (player.x === coin.x && player.y === coin.y && !coin.collected) {
-    coin.collected = true;
-  }
-  
-  // The coin
-  // Only display it if is *hasn't* been collected!
-  if (!coin.collected) {
-    
-  }  
-  
-  // The player
-
+ 
+  // Numbers on ground to mark runner order
 push();
 textSize(50);
  fill('white');
@@ -121,37 +88,43 @@ textSize(50);
   push();
   fill(255);
   textSize(10);
+  // instructions 
  text('you are cyan, click to start/pause, spam D key to move ', 35, 19);
   pop();
 
 
+  // Draw player
   push();
   noStroke();
   fill(player.fill);
   rect(player.x, player.y, player.size, player.size);
   pop();
 
+  // Draw first opponent
   push();
   noStroke();
   fill(opponentOne.fill);
   rect(opponentOne.x, opponentOne.y, opponentOne.size, opponentOne.size);
   pop();
 
+  // draw second opponent
    push();
   noStroke();
   fill(opponentTwo.fill);
   rect(opponentTwo.x, opponentTwo.y, opponentTwo.size, opponentTwo.size);
   pop();
 
+  // If race has begun, opponents move forward at their personal speeds
  if (!opponentStart) {
   opponentOne.x+= random(-0.2, 0.55);
   opponentTwo.x+= random(-0.1,0.4); };
 
-
+// win condition, if player passes finish line.x while opponenets have not, displays win message
   if (player.x >= tileSize * 8 - 5 && opponentOne.x < tileSize * 8 - 5 && opponentTwo.x ) {
     textSize(50);
     fill(255);
     text('YOU WON', 50, 200);
+    // if not, displays encouraging defeat message
   } else if (player.x >= tileSize * 8 - 5) {
     textSize(50);
     fill(0);
@@ -159,15 +132,10 @@ textSize(50);
   }
 }
 
-
-
-
-
 /**
  * Respond to a keypress
  */
 function keyPressed(event) {
-  // Check if it was one of the arrows and choose the move
   // direction
   let move = {
     x: 0,
@@ -176,11 +144,9 @@ function keyPressed(event) {
   if (event.keyCode === 68 && !opponentStart) {
     move.x = random(-0.1,4);
   }
-  else if (event.keyCode === LEFT_ARROW) {
-    move.x = -tileSize;
-  }
+ 
+  
   // Apply the movement if there is any
-  // and play the sound effect
   if (move.x !== 0 || move.y !== 0) {
 
     const p = random(0, 100);
@@ -193,6 +159,9 @@ function keyPressed(event) {
   }
 }
 
+/**
+ * Starts and stops the race on mouse click
+ */
 function mouseClicked() {
 opponentStart = !opponentStart;
 }
