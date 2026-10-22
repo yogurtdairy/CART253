@@ -31,6 +31,10 @@ noLoop();
 
   textSize(20);
   text(round(currency) + "$ in bank account", 370, 35);
+  push();
+  fill(255,0,0);
+  if (currency < 0) {text("You are in DEBT", 390, 60);}
+  pop();
   slotmachine();
   lucky();
 
@@ -51,38 +55,42 @@ noLoop();
   if (dropOne === dropTwo && dropTwo === dropThree) {
     if (dropOne === "7️⃣") {
    push();
-   noStroke();
   textSize(40);
   fill(0, 0, 0);
   textAlign(CENTER, CENTER);
+  stroke(0);
+strokeWeight(2);
   text("YOU WIN A MILLION DOLLARS", width/2, 70);
   pop() 
   currency+=1000001;
 } else if (dropOne === "🍒") {
   push();
-  noStroke();
   textSize(40);
   fill(0, 0, 0);
   textAlign(CENTER, CENTER);
-  text("YOU WIN $1,000", width/2, 70);
+  stroke(0);
+strokeWeight(2);
+  text("YOU WIN $1,000", width/2, 90);
   pop()
   currency+=1001;
 } else if (dropOne === "🍋") {
   push();
-  noStroke();
   textSize(40);
   fill(0, 0, 0);
   textAlign(CENTER, CENTER);
-  text("YOU WIN $100", width/2, 70);
+  stroke(0);
+strokeWeight(2);
+  text("YOU WIN $100", width/2, 90);
   pop()
   currency+=101;
 } else if (dropOne === "🍇") {
   push();
-  noStroke();
   textSize(40);
   fill(0, 0, 0);
   textAlign(CENTER, CENTER);
-  text("YOU WIN $2", width/2, 70);
+  stroke(0);
+strokeWeight(2);
+  text("YOU WIN $2", width/2, 90);
   pop()
   currency+=3;
 }
@@ -91,7 +99,7 @@ noLoop();
 
 function mousePressed() {
 loop();
-currency--;
+currency-=3;
 
 // rolls the p value for every slot on refresh
 const pOne = random();
