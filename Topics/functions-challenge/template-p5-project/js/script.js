@@ -16,7 +16,7 @@ const ball = {
     height: 10,
     velocity: {
         x: 0,
-        y: 10
+        y: 3
     }
 };
 
@@ -62,7 +62,8 @@ paddle.x = mouseX;
  * Moves the ball passed in as a parameter
  */
 function moveBall(ball) {
-
+ball.x = ball.x + ball.velocity.x;
+ball.y = ball.y + ball.velocity.y;
 }
 
 /**
@@ -70,7 +71,24 @@ function moveBall(ball) {
  */
 function handleBounce(ball, paddle) {
 
+//if (ball.y == paddle.y && ball.x == paddle.x) {
+ //  console.log("hi");
+//}
+
+// Calculate distance between circles' centres
+  const d = dist(ball.x, ball.y, paddle.x, paddle.y);
+  // Check if that distance is smaller than their two radii
+  let overlap = (d < ball.width + paddle.height/2 );
+  // Set the target's fill based on whether they overlap
+  if (overlap) {
+    console.log('yes');
+   ball.velocity.y = ball.velocity.y * -1;
+  }
+  else {
+    console.log('no');
+  }
 }
+
 
 /**
  * Draws the specified paddle on the canvas
