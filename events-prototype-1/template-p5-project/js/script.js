@@ -2,17 +2,22 @@
  * Slot machine v2
  * Nicole
  * 
- * This is a continuation of my slot machine prototype. It can now roll and display winning messages depending on the rarity of the outcome. 
+ * yet another continuation of my slot machine prototype. It can now roll on click, keed score of your balance $, and warn you when you are in debt.
  * Referenced Pippin Barr's random() and probability
  */
 
 "use strict";
 
+//
 let value = 300;
+
+//each slot in the slot machine's "value"
 let dropOne = undefined;
 let dropTwo = undefined;
 let dropThree = undefined;
 let dropFour = undefined;
+
+//The money in your bank account before you started gambling
 let currency = 20;
 
 /**
@@ -25,20 +30,30 @@ function setup() {
   
 }
 
+/**
+ * draws a lot of things.
+ */
 function draw() {
+  //thing to keep draw from constantly increasing money counter on win
 noLoop();
+// draws background
   background(220);
 
+  // draws text that keeps score of your money
   textSize(20);
   text(round(currency) + "$ in bank account", 370, 35);
   push();
   fill(255,0,0);
+  
+// draws text that keeps score of your debt
   if (currency < 0) {text("You are in DEBT", 390, 60);}
   pop();
+
+  // calls functions
   slotmachine();
   lucky();
 
-
+// draws handle of slot machine
   push();
   fill(255, 0, 0);
   noStroke();
@@ -53,6 +68,8 @@ noLoop();
 
 
   //checks if all three drops are the same and displays a winning message depending on the rarity of the outcome
+
+  // outcome is a jackpot. you win big.
   if (dropOne === dropTwo && dropTwo === dropThree) {
     if (dropOne === "7️⃣") {
    push();
@@ -63,7 +80,9 @@ noLoop();
 strokeWeight(2);
   text("YOU WIN A MILLION DOLLARS", width/2, 70);
   pop() 
+  //increases your money
   currency+=1000001;
+  //draws money comimg out from slot machine
   push();
   noStroke();
   fill('orange');
@@ -75,7 +94,8 @@ strokeWeight(2);
   ellipse(350,465,300);
   ellipse(370,490,300);
   pop();
-  
+
+  // outcome is very good.
 } else if (dropOne === "🍒") {
   push();
   textSize(40);
@@ -85,9 +105,12 @@ strokeWeight(2);
 strokeWeight(2);
   text("YOU WIN $1,000", width/2, 90);
   pop()
-  currency+=1001;push();
+  //increases your money
+  currency+=1001;
+  push();
   noStroke();
   fill('orange');
+  //draws money comimg out from slot machine
   ellipse(280,500,70);
   ellipse(320,480,70);
   ellipse(310,492,70);
@@ -97,6 +120,7 @@ strokeWeight(2);
   ellipse(370,490,70);
   pop();
 
+  //outcome is good.
 } else if (dropOne === "🍋") {
   push();
   textSize(40);
@@ -106,10 +130,12 @@ strokeWeight(2);
 strokeWeight(2);
   text("YOU WIN $100", width/2, 90);
   pop()
+  //increases your money
   currency+=101;
    push();
   noStroke();
   fill('orange');
+  //draws money comimg out from slot machine
   ellipse(280,500,30);
   ellipse(320,480,30);
   ellipse(310,492,30);
@@ -119,6 +145,7 @@ strokeWeight(2);
   ellipse(370,490,30);
   pop();
 
+  //outcome is average.
 } else if (dropOne === "🍇") {
   push();
   textSize(40);
@@ -128,10 +155,12 @@ strokeWeight(2);
 strokeWeight(2);
   text("YOU WIN $2", width/2, 90);
   pop()
+  //increases your money
   currency+=3;
   push();
   noStroke();
   fill('orange');
+  //draws money comimg out from slot machine
   ellipse(280,500,30);
   ellipse(320,480,30);
   pop();
@@ -139,8 +168,12 @@ strokeWeight(2);
 }
 }
 
+/**
+ * Mouse pressing activates the slot machine now
+ */
 function mousePressed() {
 loop();
+//you pay 3$ to roll
 currency-=3;
 
 // rolls the p value for every slot on refresh
@@ -196,14 +229,12 @@ if (pOne < 0.01) {
   else {
     dropThree = "🍇"
   }
-
-
-   
-  
 }
 
 
-//draws the slot machine
+/**
+ * draws the slot machine
+ */
 function slotmachine() {
   push();
   noStroke();
@@ -276,7 +307,10 @@ function slotmachine() {
   ellipse(400, 425, 80, 30);
   pop();
 }
-// draws the slots
+
+/**
+ * draws the slots
+ */
 function lucky() {
   push();
   noStroke();
