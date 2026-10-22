@@ -5,6 +5,9 @@
  * Move a shape around with the keys, eat a coin
  */
 
+
+let opponentStart = true;
+
 // The size of a single tile
 const tileSize = 32;
 
@@ -12,7 +15,7 @@ const tileSize = 32;
 const rows = 10;
 const columns = 10;
 
-const backgroundColour = "#CE87C9";
+const backgroundColour = "#327112";
 
 // The player
 const player = {
@@ -22,6 +25,26 @@ const player = {
   size: tileSize,
   // Colour
   fill: "#87ceeb",
+  // Sound effect
+};
+
+const opponentOne = {
+  // Position and size
+  x: 0,
+  y: tileSize * 5,
+  size: tileSize,
+  // Colour
+  fill: "#f3260b",
+  // Sound effect
+};
+
+const opponentTwo = {
+  // Position and size
+  x: 0,
+  y: tileSize * 2,
+  size: tileSize,
+  // Colour
+  fill: "#f30bef",
   // Sound effect
 };
 
@@ -82,6 +105,22 @@ function draw() {
   fill(player.fill);
   rect(player.x, player.y, player.size, player.size);
   pop();
+
+  push();
+  noStroke();
+  fill(opponentOne.fill);
+  rect(opponentOne.x, opponentOne.y, opponentOne.size, opponentOne.size);
+  pop();
+
+   push();
+  noStroke();
+  fill(opponentTwo.fill);
+  rect(opponentTwo.x, opponentTwo.y, opponentTwo.size, opponentTwo.size);
+  pop();
+
+ if (!opponentStart) {
+  opponentOne.x+= random(-0.2, 0.55);
+  opponentTwo.x+= random(-0.1,0.4); };
 }
 
 /**
@@ -94,8 +133,8 @@ function keyPressed(event) {
     x: 0,
     y: 0
   };
-  if (event.keyCode === RIGHT_ARROW) {
-    move.x = random(1,5);
+  if (event.keyCode === RIGHT_ARROW && !opponentStart) {
+    move.x = random(-0.1,4);
   }
   else if (event.keyCode === LEFT_ARROW) {
     move.x = -tileSize;
@@ -112,4 +151,8 @@ function keyPressed(event) {
     player.x += move.x;
     player.y += move.y;
   }
+}
+
+function mouseClicked() {
+opponentStart = !opponentStart;
 }
