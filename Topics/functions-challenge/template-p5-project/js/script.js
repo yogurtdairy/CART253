@@ -20,6 +20,17 @@ const ball = {
     }
 };
 
+const ball2 = {
+    x: 400,
+    y: 20,
+    width: 10,
+    height: 10,
+    velocity: {
+        x: 0,
+        y: 2
+    }
+};
+
 // Our paddle
 const paddle = {
     x: 300,
@@ -43,12 +54,12 @@ function draw() {
     background("#87ceeb");
 
     movePaddle(paddle);
-    moveBall(ball);
+    moveBall(ball, ball2);
 
-    handleBounce(ball, paddle);
+    handleBounce(ball, paddle, ball2);
 
     drawPaddle(paddle);
-    drawBall(ball);
+    drawBall(ball, ball2);
 }
 
 /**
@@ -61,19 +72,19 @@ paddle.x = mouseX;
 /**
  * Moves the ball passed in as a parameter
  */
-function moveBall(ball) {
+function moveBall(ball, ball2) {
 ball.x = ball.x + ball.velocity.x;
 ball.y = ball.y + ball.velocity.y;
+
+ball2.x = ball2.x + ball2.velocity.x;
+ball2.y = ball2.y + ball2.velocity.y;
 }
 
 /**
  * Bounces the provided ball off the provided paddle
  */
-function handleBounce(ball, paddle) {
+function handleBounce(ball, paddle, ball2) {
 
-//if (ball.y == paddle.y && ball.x == paddle.x) {
- //  console.log("hi");
-//}
 
 // Calculate distance between circles' centres
   const d = dist(ball.x, ball.y, paddle.x, paddle.y);
@@ -81,11 +92,15 @@ function handleBounce(ball, paddle) {
   let overlap = (d < ball.width + paddle.height/2 );
   // Set the target's fill based on whether they overlap
   if (overlap) {
-    console.log('yes');
    ball.velocity.y = ball.velocity.y * -1;
   }
-  else {
-    console.log('no');
+
+  const d2 = dist(ball2.x, ball2.y, paddle.x, paddle.y);
+  // Check if that distance is smaller than their two radii
+  let overlap2 = (d2 < ball2.width + paddle.height/2 );
+  // Set the target's fill based on whether they overlap
+  if (overlap2) {
+   ball2.velocity.y = ball2.velocity.y * -1;
   }
 }
 
@@ -105,12 +120,19 @@ function drawPaddle(paddle) {
 /**
  * Draws the specified ball on the canvas
  */
-function drawBall(ball) {
+function drawBall(ball, ball2) {
     push();
     rectMode(CENTER);
     noStroke();
     fill("pink");
     rect(ball.x, ball.y, ball.width, ball.height);
+    pop();
+
+    push();
+    rectMode(CENTER);
+    noStroke();
+    fill("purple");
+    rect(ball2.x, ball2.y, ball2.width, ball2.height);
     pop();
 }
 
