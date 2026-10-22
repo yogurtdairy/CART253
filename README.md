@@ -68,3 +68,21 @@ Prototyping: Instructions
 
 [view prototype 3 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/conditionals-prototype-3/template-p5-project/js/script.js)    |
 [view prototype 3 visual here](https://yogurtdairy.github.io/CART253/Topics/conditionals-prototype-3/template-p5-project/)
+
+# Prototyping: Events
+[reflective journals](https://github.com/yogurtdairy/CART253/blob/main/journal.md)
+
+### Prototype 1
+![slot machine v3](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-10-22%20003746.png?raw=true)
+
+[view prototype 1 code here](https://github.com/yogurtdairy/CART253/blob/main/events-prototype-1/template-p5-project/js/script.js)    |
+[view prototype 1 visual here](https://yogurtdairy.github.io/CART253/events-prototype-1/template-p5-project/)
+
+### Prototype 2
+![Track and Field](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-10-22%20003721.png?raw=true)
+
+[view prototype 2 code here](https://github.com/yogurtdairy/CART253/blob/main/events-prototype-2/template-p5-project/js/script.js)    |
+[view prototype 2 visual here](https://yogurtdairy.github.io/CART253/events-prototype-2/template-p5-project/)
+
+
+
