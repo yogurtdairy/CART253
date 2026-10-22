@@ -18,7 +18,7 @@ const columns = 10;
 const backgroundColour = "#0b8028";
 
 // The player
-const player = {
+let player = {
   // Position and size
   x: 0,
   y: tileSize * 8,
@@ -47,6 +47,10 @@ const opponentTwo = {
   fill: "#f30bef",
   // Sound effect
 };
+
+const finishLine = {
+x: tileSize * 9 ,
+}
 
 // The coin
 const coin = {
@@ -87,7 +91,9 @@ function draw() {
   line(0, tileSize * 7, tileSize * 10, tileSize * 7);
   line(0, tileSize * 4, tileSize * 10, tileSize * 4);
   line(0, tileSize * 1, tileSize * 10, tileSize * 1);
-  line(tileSize * 1.5, 0, tileSize * 1.5, tileSize * 10);
+  line(tileSize * 1.5, 35, tileSize * 1.5, tileSize * 10);
+
+  line(tileSize *9, 35, tileSize * 9, tileSize * 10);
   pop();
   
   // Check if the player got the coin (i.e. is in the same location)
@@ -113,8 +119,9 @@ textSize(50);
   pop();
 
   push();
-  textSize(10)
- text('you are cyan, click to start/pause, spam D key to move', 60, 19);
+  fill(255);
+  textSize(10);
+ text('you are cyan, click to start/pause, spam D key to move ', 35, 19);
   pop();
 
 
@@ -139,7 +146,22 @@ textSize(50);
  if (!opponentStart) {
   opponentOne.x+= random(-0.2, 0.55);
   opponentTwo.x+= random(-0.1,0.4); };
+
+
+  if (player.x >= tileSize * 8 - 5 && opponentOne.x < tileSize * 8 - 5 && opponentTwo.x ) {
+    textSize(50);
+    fill(255);
+    text('YOU WON', 50, 200);
+  } else if (player.x >= tileSize * 8 - 5) {
+    textSize(50);
+    fill(0);
+    text('Good try', 70, 200);
+  }
 }
+
+
+
+
 
 /**
  * Respond to a keypress
