@@ -20,6 +20,8 @@ let currency = 20;
  */
 function setup() {
   createCanvas(600, 600);
+  rectMode(CENTER);
+  
   
 }
 
@@ -32,7 +34,7 @@ noLoop();
   slotmachine();
   lucky();
 
-  rectMode(CENTER);
+
   push();
   fill(255, 0, 0);
   noStroke();
@@ -43,6 +45,7 @@ noLoop();
   fill(255, 120, 120);
   ellipse(498, value - 3, 18, 22);
   pop();
+
 
   //checks if all three drops are the same and displays a winning message depending on the rarity of the outcome
   if (dropOne === dropTwo && dropTwo === dropThree) {
@@ -89,12 +92,14 @@ noLoop();
 function mousePressed() {
 loop();
 currency--;
+
 // rolls the p value for every slot on refresh
 const pOne = random();
   const pTwo = random();
   const pThree = random();
 
 if (pOne < 0.01) {
+
     dropOne = "7️⃣";
   }
   // Between 0.01 and 0.21 means this one is 20% of the time
@@ -141,6 +146,10 @@ if (pOne < 0.01) {
   else {
     dropThree = "🍇"
   }
+
+
+   
+  
 }
 
 
@@ -247,3 +256,4 @@ function lucky() {
   text("Jackpot", 230, 180);
   pop();
 }
+
