@@ -84,5 +84,11 @@ Prototyping: Instructions
 [view prototype 2 code here](https://github.com/yogurtdairy/CART253/blob/main/events-prototype-2/template-p5-project/js/script.js)    |
 [view prototype 2 visual here](https://yogurtdairy.github.io/CART253/events-prototype-2/template-p5-project/)
 
+### Prototype 3 - Egg Timer
+![Egg Timer](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-10-22%20230214.png?raw=true)
+
+[view prototype 2 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/events-prototype-3/template-p5-project/js/script.js)    |
+[view prototype 2 visual here](https://yogurtdairy.github.io/CART253/Topics/events-prototype-3/template-p5-project/)
+
 
 
