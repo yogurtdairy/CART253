@@ -44,7 +44,7 @@ function setup() {
 /**
  * redraws things every frame
  */
-function draw() {s
+function draw() {
   // colors egg white over time to visualize cooking state
   egg.eggWhite = egg.eggWhite + 0.013;
 
