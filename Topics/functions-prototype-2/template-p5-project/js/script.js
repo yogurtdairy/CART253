@@ -1,27 +1,28 @@
 /**
- * Title of Project
- * Author Name
+ * Make a target
+ * Nicole Tanev
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * slider controls size of circle that is constantly shifting colors
+ * referenced my own code for variables prototype 2
  */
 
 "use strict";
 
 let slider;
 
+//the ellipse
 let ellipse1 = undefined;
 
-let ball = {
-  w: 10,
-  h: 10,
-
+//the variables to influence ellipse colors
+let ellipseColors = {
   r: 255,
   g: 255,
   b: 255,
 };
 
-
+/**
+ * Creates the canvas and slider
+ */
 function setup() {
   createCanvas(600, 600);
 
@@ -31,6 +32,9 @@ function setup() {
   slider.size(200);
 }
 
+/**
+ * Updates and draws the ellipse
+ */
 function draw() {
     theEllipse();
   let g = slider.value();
@@ -40,37 +44,33 @@ function draw() {
  drawEllipse(ellipse1);
 
 
-  if (ball.w > 50) {
-    ball.w = 10;
+  // reseting color if past 255 or below 0, to avoid too much white or black
+  if (ellipseColors.r > 255) {
+    ellipseColors.r = 220;
+  }
+  if (ellipseColors.g > 255) {
+    ellipseColors.g = 220;
+  }
+  if (ellipseColors.b > 255) {
+    ellipseColors.b = 220;
   }
 
-  if (ball.h > 50) {
-    ball.h = 10;
+  if (ellipseColors.r < 0) {
+    ellipseColors.r = 20;
   }
-
-  // reseting color if past 255 or bellow 0, to avoid too much white or black
-  if (ball.r > 255) {
-    ball.r = 220;
+  if (ellipseColors.g < 0) {
+    ellipseColors.g = 20;
   }
-  if (ball.g > 255) {
-    ball.g = 220;
-  }
-  if (ball.b > 255) {
-    ball.b = 220;
-  }
-
-  if (ball.r < 0) {
-    ball.r = 20;
-  }
-  if (ball.g < 0) {
-    ball.g = 20;
-  }
-  if (ball.b < 0) {
-    ball.b = 20;
+  if (ellipseColors.b < 0) {
+    ellipseColors.b = 20;
   }
 
 }
 
+/**
+ * Creates a JS object representing an ellipse and using the
+ * parameters provided in its properties
+ */
 function theEllipse(x, y, size) {
 
     const shape ={
@@ -79,10 +79,13 @@ y: y,
 size: size,};
 return shape}
 
-
+/**
+ * displays the ellipse and it's color
+ */
 function drawEllipse(shape) {
   push();
-  fill(ball.r += random(-15, 15), ball.g += random(-15, 15), ball.b += random(-15, 15) );
+  //color is increasing and decreasing in rgb values at random
+  fill(ellipseColors.r += random(-15, 15), ellipseColors.g += random(-15, 15), ellipseColors.b += random(-15, 15) );
   noStroke();
   ellipse(shape.x, shape.y, shape.size);
   pop(); }
