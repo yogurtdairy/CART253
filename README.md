@@ -90,5 +90,21 @@ Prototyping: Instructions
 [view prototype 2 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/events-prototype-3/template-p5-project/js/script.js)    |
 [view prototype 2 visual here](https://yogurtdairy.github.io/CART253/Topics/events-prototype-3/template-p5-project/)
 
+# Prototyping: Functions
+[reflective journals](https://github.com/yogurtdairy/CART253/blob/main/journal.md)
+
+### Prototype 1 - Evil Eyes
+![Evil Eyes](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-10-28%20222732.png?raw=true)
+
+[view prototype 1 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/functions-prototype-1/template-p5-project/js/script.js)    |
+[view prototype 1 visual here](https://yogurtdairy.github.io/CART253/Topics/functions-prototype-1/template-p5-project/)
+
+### Prototype 2 -  Make a target
+![Make a target](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-10-28%20222704.png?raw=true)
+
+[view prototype 2 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/functions-prototype-2/template-p5-project/js/script.js)    |
+[view prototype 2 visual here](https://yogurtdairy.github.io/CART253/Topics/functions-prototype-2/template-p5-project/)
+
+
 
 
