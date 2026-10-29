@@ -12,26 +12,63 @@ let slider;
 
 let ellipse1 = undefined;
 
+let ball = {
+  w: 10,
+  h: 10,
+
+  r: 255,
+  g: 255,
+  b: 255,
+};
+
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(600, 600);
 
-  // Create a slider and place it at the top of the canvas.
-  // Set its default value to 0.
-  // Set its step size to 0 so that it moves smoothly.
+  // Creates a slider and sets its position and size
   slider = createSlider(1, 255, 0, 0);
-  slider.position(600, 400);
+  slider.position(660, 200);
   slider.size(200);
 }
 
 function draw() {
     theEllipse();
-  // Use the slider as a grayscale value.
   let g = slider.value();
-  ellipse1 = theEllipse(200,200,g)
+  ellipse1 = theEllipse(300,300,g)
   console.log("ellipse1");
   
  drawEllipse(ellipse1);
+
+
+  if (ball.w > 50) {
+    ball.w = 10;
+  }
+
+  if (ball.h > 50) {
+    ball.h = 10;
+  }
+
+  // reseting color if past 255 or bellow 0, to avoid too much white or black
+  if (ball.r > 255) {
+    ball.r = 220;
+  }
+  if (ball.g > 255) {
+    ball.g = 220;
+  }
+  if (ball.b > 255) {
+    ball.b = 220;
+  }
+
+  if (ball.r < 0) {
+    ball.r = 20;
+  }
+  if (ball.g < 0) {
+    ball.g = 20;
+  }
+  if (ball.b < 0) {
+    ball.b = 20;
+  }
+
 }
 
 function theEllipse(x, y, size) {
@@ -45,7 +82,10 @@ return shape}
 
 function drawEllipse(shape) {
   push();
-  fill(255, 0, 100);
+  fill(ball.r += random(-15, 15), ball.g += random(-15, 15), ball.b += random(-15, 15) );
   noStroke();
   ellipse(shape.x, shape.y, shape.size);
   pop(); }
+
+
+  
