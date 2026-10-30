@@ -14,6 +14,7 @@ let enemy1 = undefined;
 let enemy2 = undefined;
 let enemy3 = undefined;
 
+// the health points at the start
 let health = 100;
 
 // The user's circle (they will move it around)
@@ -25,7 +26,7 @@ const userCircle = {
 };
 
 /**
- * Create the canvas and the enemys
+ * Create the canvas and the enemies
  */
 function setup() {
   createCanvas(400, 400);
@@ -48,10 +49,10 @@ function createenemy(x, y, size) {
     y: y, // Use the y parameter for the y property
     size: size, // Use the size parameter for size property
     // For the fills, use default settings
-    fill: "#000000", // red to start
+    fill: "#000000", // black to start
     fills: {
-      noOverlap: "#000000", // red for no overlap
-      overlap: "#ff0000" // green for overlap
+      noOverlap: "#000000", // black for no overlap
+      overlap: "#ff0000" // red for overlap
     }
   };
   // We RETURN this new enemy so it can be stored in a variable
@@ -62,7 +63,6 @@ function createenemy(x, y, size) {
  * Move the user circle, check for overlap, draw the circles
  */
 function draw() {
-  // Aaaaaa!
   background("#000000");
   push();
    rectMode(CENTER);
@@ -86,13 +86,13 @@ function draw() {
   drawElement(enemy3);
   drawElement(userCircle);
 
+  // Draw the text that shows health point score
   fill(255);
   textAlign(CENTER);
   textStyle(BOLD);
   textSize(32);
   text(round(health) + " health points", 200, 40);
   
-  // Did you see how tidy that draw() is???
 }
 
 /**
@@ -102,26 +102,21 @@ function draw() {
  */
 function checkOverlap(user, enemy) {
 
-   
-
-    console.log(health);
   // Calculate distance between circles' centres
   const d = dist(user.x, user.y, enemy.x, enemy.y);
   // Check if that distance is smaller than their two radii, 
-  // because if it is, they are overlapping by the amazing
-  // power of geometry!
+  // because if it is, they are overlapping
   const overlap = (d < user.size/2 + enemy.size/2);
   // Set the enemy's fill based on whether they overlap
   if (overlap) {
-    
-
     enemy.fill = enemy.fills.overlap;
+    //decreases health when overlapping
     health -= 0.1
   }
   else {
     enemy.fill = enemy.fills.noOverlap;
   }
-
+  //moves the enemy using noise but made more hectic/less smooth with framecount and random
   enemy.x = 380 * noise(0.05 * frameCount)
   enemy.y= 380 * noise(0.05 * frameCount + 10000)
 
@@ -141,6 +136,4 @@ function drawElement(element) {
   fill(element.fill);
   ellipse(element.x, element.y, element.size);
   pop();
-
-  
 }
