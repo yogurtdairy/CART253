@@ -15,6 +15,8 @@ let target1 = undefined;
 let target2 = undefined;
 let target3 = undefined;
 
+let score = 100;
+
 // The user's circle (they will move it around)
 const userCircle = {
   x: undefined, // will be mouseX
@@ -29,9 +31,9 @@ const userCircle = {
 function setup() {
   createCanvas(400, 400);
   
-  target1 = createTarget(100, 100, 150);
-  target2 = createTarget(200, 200, 100);
-  target3 = createTarget(300, 300, 50);
+  target1 = createTarget(200, 200, 100);
+  target2 = createTarget(200, 200, 60);
+  target3 = createTarget(300, 300, 40);
 }
 
 /**
@@ -47,10 +49,10 @@ function createTarget(x, y, size) {
     y: y, // Use the y parameter for the y property
     size: size, // Use the size parameter for size property
     // For the fills, use default settings
-    fill: "#ff0000", // red to start
+    fill: "#000000", // red to start
     fills: {
-      noOverlap: "#ff0000", // red for no overlap
-      overlap: "#00ff00" // green for overlap
+      noOverlap: "#000000", // red for no overlap
+      overlap: "#ff0000" // green for overlap
     }
   };
   // We RETURN this new target so it can be stored in a variable
@@ -84,6 +86,12 @@ function draw() {
   drawElement(target2);
   drawElement(target3);
   drawElement(userCircle);
+
+  fill(255);
+  textAlign(CENTER);
+  textStyle(BOLD);
+  textSize(32);
+  text(round(score) + " health points", 200, 40);
   
   // Did you see how tidy that draw() is???
 }
@@ -94,6 +102,10 @@ function draw() {
  * overlap.
  */
 function checkOverlap(user, target) {
+
+   
+
+    console.log(score);
   // Calculate distance between circles' centres
   const d = dist(user.x, user.y, target.x, target.y);
   // Check if that distance is smaller than their two radii, 
@@ -102,12 +114,22 @@ function checkOverlap(user, target) {
   const overlap = (d < user.size/2 + target.size/2);
   // Set the target's fill based on whether they overlap
   if (overlap) {
+    
+
     target.fill = target.fills.overlap;
+    score -= 0.1
   }
   else {
     target.fill = target.fills.noOverlap;
   }
+
+  target.x = 380 * noise(0.05 * frameCount)
+  target.y= 380 * noise(0.05 * frameCount + 10000)
+
+  target1.x += random(-5,5);
 }
+
+
 
 /**
  * Draws a circle element using its position, size, and fill.
