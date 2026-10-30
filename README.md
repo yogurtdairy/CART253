@@ -105,6 +105,12 @@ Prototyping: Instructions
 [view prototype 2 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/functions-prototype-2/template-p5-project/js/script.js)    |
 [view prototype 2 visual here](https://yogurtdairy.github.io/CART253/Topics/functions-prototype-2/template-p5-project/)
 
+### Prototype 3 -  Box game V2
+![Box game v2](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-10-29%20223102.png?raw=true)
+
+[view prototype 3 code here](https://github.com/yogurtdairy/CART253/blob/main/functions-prototype-3/template-p5-project/js/script.js)    |
+[view prototype 3 visual here](https://yogurtdairy.github.io/CART253/functions-prototype-3/template-p5-project/)
+
 
 
 
