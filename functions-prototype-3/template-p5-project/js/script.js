@@ -1,21 +1,20 @@
 /**
- * Overlapping Circles (Functions)
- * Pippin Barr
- *
- * Demonstrates the code needed to check if circles overlap.
- * Three are static, one is controlled by the user.
- * This version moves the creation, drawing and overlap check into
- * functions allowing us to check three targets without needing to 
- * repeat code.
+ * Box Game v2
+ * Nicole Tanev
+ * 
+ * A simple game where you must avoid the bigger circle. Updated version actually keeps you contained within box, and makes you
+ * lose more points the closer you are to the center of the enemy circle.
+ * Referenced Pippin's Overlapping Circles (Functions)
  */
 
-// We start with our target circles undefined because we will create
-// them with a function in setup
-let target1 = undefined;
-let target2 = undefined;
-let target3 = undefined;
 
-let score = 100;
+// We start with our enemy circles undefined because we will create
+// them with a function in setup
+let enemy1 = undefined;
+let enemy2 = undefined;
+let enemy3 = undefined;
+
+let health = 100;
 
 // The user's circle (they will move it around)
 const userCircle = {
@@ -26,25 +25,25 @@ const userCircle = {
 };
 
 /**
- * Create the canvas and the targets
+ * Create the canvas and the enemys
  */
 function setup() {
   createCanvas(400, 400);
   
-  target1 = createTarget(200, 200, 100);
-  target2 = createTarget(200, 200, 60);
-  target3 = createTarget(300, 300, 40);
+  enemy1 = createenemy(200, 200, 100);
+  enemy2 = createenemy(200, 200, 60);
+  enemy3 = createenemy(300, 300, 40);
 }
 
 /**
- * Creates a target using the provided position and size parameters
+ * Creates a enemy using the provided position and size parameters
  */
-function createTarget(x, y, size) {
+function createenemy(x, y, size) {
   // We create a new object in a variable with the properties
-  // our target needs. Some of them come from the parameters
+  // our enemy needs. Some of them come from the parameters
   // and so are specified when this function is called, some of them
   // are just defaults (like the fills)
-  const target = {
+  const enemy = {
     x: x, // Use the x parameter for the x property
     y: y, // Use the y parameter for the y property
     size: size, // Use the size parameter for size property
@@ -55,8 +54,8 @@ function createTarget(x, y, size) {
       overlap: "#ff0000" // green for overlap
     }
   };
-  // We RETURN this new target so it can be stored in a variable
-  return target;
+  // We RETURN this new enemy so it can be stored in a variable
+  return enemy;
 }
 
 /**
@@ -77,56 +76,56 @@ function draw() {
   userCircle.y = constrain(mouseY, 80, 320);
   
   // Check overlap
-  checkOverlap(userCircle, target1);
-  checkOverlap(userCircle, target2);
-  checkOverlap(userCircle, target3);
+  checkOverlap(userCircle, enemy1);
+  checkOverlap(userCircle, enemy2);
+  checkOverlap(userCircle, enemy3);
   
-  // Draw the targets and the user
-  drawElement(target1);
-  drawElement(target2);
-  drawElement(target3);
+  // Draw the enemys and the user
+  drawElement(enemy1);
+  drawElement(enemy2);
+  drawElement(enemy3);
   drawElement(userCircle);
 
   fill(255);
   textAlign(CENTER);
   textStyle(BOLD);
   textSize(32);
-  text(round(score) + " health points", 200, 40);
+  text(round(health) + " health points", 200, 40);
   
   // Did you see how tidy that draw() is???
 }
 
 /**
- * Checks overlap between the user circle and a provided target.
- * Changes the target's fill depending on whether there is an
+ * Checks overlap between the user circle and a provided enemy.
+ * Changes the enemy's fill depending on whether there is an
  * overlap.
  */
-function checkOverlap(user, target) {
+function checkOverlap(user, enemy) {
 
    
 
-    console.log(score);
+    console.log(health);
   // Calculate distance between circles' centres
-  const d = dist(user.x, user.y, target.x, target.y);
+  const d = dist(user.x, user.y, enemy.x, enemy.y);
   // Check if that distance is smaller than their two radii, 
   // because if it is, they are overlapping by the amazing
   // power of geometry!
-  const overlap = (d < user.size/2 + target.size/2);
-  // Set the target's fill based on whether they overlap
+  const overlap = (d < user.size/2 + enemy.size/2);
+  // Set the enemy's fill based on whether they overlap
   if (overlap) {
     
 
-    target.fill = target.fills.overlap;
-    score -= 0.1
+    enemy.fill = enemy.fills.overlap;
+    health -= 0.1
   }
   else {
-    target.fill = target.fills.noOverlap;
+    enemy.fill = enemy.fills.noOverlap;
   }
 
-  target.x = 380 * noise(0.05 * frameCount)
-  target.y= 380 * noise(0.05 * frameCount + 10000)
+  enemy.x = 380 * noise(0.05 * frameCount)
+  enemy.y= 380 * noise(0.05 * frameCount + 10000)
 
-  target1.x += random(-5,5);
+  enemy1.x += random(-5,5);
 }
 
 
