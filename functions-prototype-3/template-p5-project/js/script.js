@@ -1,83 +1,125 @@
 /**
- * Box Game
- * Nicole
- * 
- * A simple game where you must avoid the bigger circle.
- * 
+ * Overlapping Circles (Functions)
+ * Pippin Barr
+ *
+ * Demonstrates the code needed to check if circles overlap.
+ * Three are static, one is controlled by the user.
+ * This version moves the creation, drawing and overlap check into
+ * functions allowing us to check three targets without needing to 
+ * repeat code.
  */
 
-"use strict";
+// We start with our target circles undefined because we will create
+// them with a function in setup
+let target1 = undefined;
+let target2 = undefined;
+let target3 = undefined;
 
-var offX = 1;
-var offY = 2;
+// The user's circle (they will move it around)
+const userCircle = {
+  x: undefined, // will be mouseX
+  y: undefined, // will be mouseY
+  size: 20,
+  fill: "#000000"
+};
 
-// Player Size
-var playerSize = 15;
-
-// Enemy Size
-var enmySize = 60;
-
-// Enemy Position
-var enmyX;
-var enmyY;
-
-// Score counter
-var score = 0;
-
-var reColors = ["#f94144", "#f3722c", "#f9c74f"];
-
-// create canvas
+/**
+ * Create the canvas and the targets
+ */
 function setup() {
   createCanvas(400, 400);
-
-  // Place enemy at random start position
-  enmyX = random(width - enmySize);
-  enmyY = random(height - enmySize);
+  
+  target1 = createTarget(100, 100, 150);
+  target2 = createTarget(200, 200, 100);
+  target3 = createTarget(300, 300, 50);
 }
-// draw player and text
+
+/**
+ * Creates a target using the provided position and size parameters
+ */
+function createTarget(x, y, size) {
+  // We create a new object in a variable with the properties
+  // our target needs. Some of them come from the parameters
+  // and so are specified when this function is called, some of them
+  // are just defaults (like the fills)
+  const target = {
+    x: x, // Use the x parameter for the x property
+    y: y, // Use the y parameter for the y property
+    size: size, // Use the size parameter for size property
+    // For the fills, use default settings
+    fill: "#ff0000", // red to start
+    fills: {
+      noOverlap: "#ff0000", // red for no overlap
+      overlap: "#00ff00" // green for overlap
+    }
+  };
+  // We RETURN this new target so it can be stored in a variable
+  return target;
+}
+
+/**
+ * Move the user circle, check for overlap, draw the circles
+ */
 function draw() {
-
-
-let xc = constrain(mouseX, 90, 310);
-let xy = constrain(mouseY, 90, 310);
-
-  noCursor();
-  background(0, 0, 0);
-  rectMode(CENTER);
+  // Aaaaaa!
+  background("#000000");
+  push();
+   rectMode(CENTER);
   fill(255);
   rect(200, 200, 250);
-  checkCollision();
-
-
-  fill(0);
-  ellipse(xc, xy, playerSize);
+  pop();
 
   
-  fill(255);
-  textAlign(CENTER);
-  textStyle(BOLD);
-  textSize(32);
-  text(round(score + 50) + " health points", 200, 40);
-
-  if (score < -50) {text("GAME OVER", 200, 375);}
+  // Move user circle
+  userCircle.x = constrain(mouseX, 80, 320);
+  userCircle.y = constrain(mouseY, 80, 320);
+  
+  // Check overlap
+  checkOverlap(userCircle, target1);
+  checkOverlap(userCircle, target2);
+  checkOverlap(userCircle, target3);
+  
+  // Draw the targets and the user
+  drawElement(target1);
+  drawElement(target2);
+  drawElement(target3);
+  drawElement(userCircle);
+  
+  // Did you see how tidy that draw() is???
 }
 
-// calculates distance between player and enemy to figure out collision
-function checkCollision() {
-  offX += 0.02;
-  offY += 0.02;
-  let elX = map(noise(offX), 0, 1, 0, 400);
-  let elY = map(noise(offY), 0, 1, 0, 400);
-  fill(random(reColors));
-  noStroke();
-  ellipse(elX, elY, enmySize);
-  // Distance between player and enemy centers
-  let distAway = dist(mouseX, mouseY, elX, elY);
-
-  // Threshold for collision: half player + half enemy "size"
-  let threshold = playerSize / 2 + enmySize / 2;
-
-  if (distAway < threshold) {
-    score += -1
+/**
+ * Checks overlap between the user circle and a provided target.
+ * Changes the target's fill depending on whether there is an
+ * overlap.
+ */
+function checkOverlap(user, target) {
+  // Calculate distance between circles' centres
+  const d = dist(user.x, user.y, target.x, target.y);
+  // Check if that distance is smaller than their two radii, 
+  // because if it is, they are overlapping by the amazing
+  // power of geometry!
+  const overlap = (d < user.size/2 + target.size/2);
+  // Set the target's fill based on whether they overlap
+  if (overlap) {
+    target.fill = target.fills.overlap;
   }
+  else {
+    target.fill = target.fills.noOverlap;
+  }
+}
+
+/**
+ * Draws a circle element using its position, size, and fill.
+ */
+function drawElement(element) {
+
+  push();
+  noCursor();
+  noStroke();
+  fill(element.fill);
+  ellipse(element.x, element.y, element.size);
+  pop();
+
+  
 }
