@@ -31,3 +31,24 @@ These last two weeks have been hectic, as October always tends to be for me. I a
 ![gambling](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-10-22%20234808.png?raw=true)
 
 Pictured above is a screenshot from my gameplay of the game Price Is Right Plinko, my favorite "gambling" game without real money. I might code a Plinko game someday, I think it could be fun and challenging to experiment with ball bounce physics.
+
+## October 29th
+This week was the week of unexpected surprises. My prototypes evolved in mysterious ways as I was working on them and they always ended up doing something completely different from what I had in mind. For my first prototype I was thinking of making a pair of eyes that follow the cursor, but I became annoyed at my inability to make the iris/pupils move separately. I did get it to track really nicely so I decided to go crazy with the movement to make the eyes look like they're dancing instead. I have no idea what purpose this prototype would serve beyond being entertaining, but that's okay, not everything needs to be a game. My second prototype was the one that ended up surprising me the most... I wanted to create my one slider using mapping so I wrote a createSlider() function that would serve as my container for the code I would write. I then ran my project to see if it had not broken, and to my surprise a fully functional slider had appeared without me doing much of anything. I looked it up and apparently createSlider() is already a built-in function in the p5 library.. and I had stumbled upon it by complete accident! P5 is truly wonderful, I learn so much each time. After this discovery, I decided instead to make something using this built-in slider. A true happy accident! Finally, for my last prototype I wanted to modify some of my older code to include parameters (Refactoring?), but once again my original idea of there being multiple enemies with a mind of their own did not work as they all shared the same x and y values, even with noise. Instead, I realized them overlapping would make the score decrease faster, so I decided to keep that as a mechanic. The more enemies the player overlaps with (aka the closer you are to the center), the more health you will lose. This makes the game less punishing if the enemy only grazes you. I think coding is a collection of happy accidents like these because you never really know if what you are writing in code will have the visual effect that you think it will, and things not going according to plan is an occasion to use your creativity to invent new solutions. Wonderful! 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
