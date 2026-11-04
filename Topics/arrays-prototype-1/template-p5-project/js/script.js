@@ -47,7 +47,7 @@ function mouseMoved() {
   if (mouseX > 360) windDirection += 0.20;
   if (mouseX < 440) windDirection -= 0.20;
   if (windDirection < -1) windDirection = -1;
-  if (windDirection > 6) windDirection = 6;
+  if (windDirection > 7) windDirection = 7;
   console.log(windDirection);
 }
 
@@ -69,9 +69,11 @@ class snowflake {
     ellipse(this.x, this.y, this.size);
   }
 
-   move() {
-    this.y += this.speed + windDirection // Move down and slow/speed up
-
+    move() {
+    this.y += this.speed + windDirection; // Move down and slow/speed up
+    this.x += windDirection - 1; // change wind direction
+    if (this.x > 820) this.x = -20;
+    if (this.x < -20) this.x = 820; // reset snowflakes side to side + smoothing
 
     if (this.y > height+20) {
       this.y = -20; // reset snowflakes top to bottom + smoothing
