@@ -20,10 +20,11 @@ function setup() {
     let x = random(width); // random x position
     let y = random(height); // random y position
     let size = random(10, 30); // random size
+    let speed = random(2, 3.5); // random speed
     let colour = random(170, 240); //random colour
 
     // Create a new snowflake object and add it to the array
-    snowflakess.push(new snowflake(x, y, size, colour));
+    snowflakess.push(new snowflake(x, y, size, speed, colour));
   }
 }
 
@@ -34,6 +35,7 @@ function draw() {
 
   // Loop through each snowflakes, update & show it
   for (let i = 0; i < snowflakess.length; i++) {
+    snowflakess[i].move();
     snowflakess[i].show();
     // Display the snowflakes
   }
@@ -42,10 +44,11 @@ function draw() {
 // Define a class called snowflake
 class snowflake {
   // The constructor runs when a new object is created
-  constructor(x, y, size, colour) {
+  constructor(x, y, size, speed, colour) {
     this.x = x; // x position
     this.y = y; // y position
     this.size = size; // diameter of the snowflake
+    this.speed = speed; // fall speed
     this.colour = colour; //snowflake colour
   }
 
@@ -55,4 +58,11 @@ class snowflake {
     fill(this.colour);
     ellipse(this.x, this.y, this.size);
   }
+
+   move() {
+   this.y += this.speed // Move down and slow/speed up
+ 
+   if (this.x > 820) this.x = -20;
+  if (this.x < -20) this.x = 820; // reset snowflakes side to side + smooth
+}
 }
