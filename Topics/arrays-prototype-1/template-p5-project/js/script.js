@@ -1,9 +1,8 @@
 /**
- * Title of Project
- * Author Name
+ * Snowfall
+ * Nicole Tanev
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Snowflakes! You can control the falling speed and wind direction 
  */
 
 "use strict";
@@ -11,8 +10,13 @@
 // Array to hold all the snowflake objects
 let snowflakes = [];
 
+//variable that controls the wind direction (and influences fall speed)
 let windDirection = 0;
 
+
+/**
+ * Create the canvas and the snowflakes
+ */
 function setup() {
   createCanvas(800, 600); // Set canvas size
  
@@ -30,7 +34,9 @@ function setup() {
   }
 }
 
-
+/**
+ * Draw background, Loop snowflakes, call snowflake class functions
+ */
 function draw() {
   background(20);
 
@@ -43,6 +49,7 @@ function draw() {
   }
 }
 
+
 function mouseMoved() {
   if (mouseX > 360) windDirection += 0.20;
   if (mouseX < 440) windDirection -= 0.20;
@@ -51,7 +58,10 @@ function mouseMoved() {
   console.log(windDirection);
 }
 
-// Define a class called snowflake
+// 
+/**
+ * Define a class called snowflake
+ */
 class snowflake {
   // The constructor runs when a new object is created
   constructor(x, y, size, speed, colour) {
@@ -68,7 +78,7 @@ class snowflake {
     fill(this.colour);
     ellipse(this.x, this.y, this.size);
   }
-
+    //move the snowflakes
     move() {
     this.y += this.speed + windDirection; // Move down and slow/speed up
     this.x += windDirection - 1; // change wind direction
