@@ -11,6 +11,8 @@
 // Array to hold all the snowflake objects
 let snowflakes = [];
 
+let windDirection = 0;
+
 function setup() {
   createCanvas(800, 600); // Set canvas size
  
@@ -41,6 +43,14 @@ function draw() {
   }
 }
 
+function mouseMoved() {
+  if (mouseX > 360) windDirection += 0.20;
+  if (mouseX < 440) windDirection -= 0.20;
+  if (windDirection < -1) windDirection = -1;
+  if (windDirection > 6) windDirection = 6;
+  console.log(windDirection);
+}
+
 // Define a class called snowflake
 class snowflake {
   // The constructor runs when a new object is created
@@ -60,7 +70,7 @@ class snowflake {
   }
 
    move() {
-    this.y += this.speed // Move down and slow/speed up
+    this.y += this.speed + windDirection // Move down and slow/speed up
 
 
     if (this.y > height+20) {
