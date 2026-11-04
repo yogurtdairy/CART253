@@ -9,7 +9,7 @@
 "use strict";
 
 // Array to hold all the snowflake objects
-let snowflakess = [];
+let snowflakes = [];
 
 function setup() {
   createCanvas(800, 600); // Set canvas size
@@ -24,7 +24,7 @@ function setup() {
     let colour = random(170, 240); //random colour
 
     // Create a new snowflake object and add it to the array
-    snowflakess.push(new snowflake(x, y, size, speed, colour));
+    snowflakes.push(new snowflake(x, y, size, speed, colour));
   }
 }
 
@@ -34,9 +34,9 @@ function draw() {
 
 
   // Loop through each snowflakes, update & show it
-  for (let i = 0; i < snowflakess.length; i++) {
-    snowflakess[i].move();
-    snowflakess[i].show();
+  for (let i = 0; i < snowflakes.length; i++) {
+    snowflakes[i].move();
+    snowflakes[i].show();
     // Display the snowflakes
   }
 }
