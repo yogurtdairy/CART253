@@ -60,9 +60,11 @@ class snowflake {
   }
 
    move() {
-   this.y += this.speed // Move down and slow/speed up
- 
-   if (this.x > 820) this.x = -20;
-  if (this.x < -20) this.x = 820; // reset snowflakes side to side + smooth
-}
+    this.y += this.speed // Move down and slow/speed up
+
+
+    if (this.y > height+20) {
+      this.y = -20; // reset snowflakes top to bottom + smoothing
+    }
+  }
 }
