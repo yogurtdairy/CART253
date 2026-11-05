@@ -17,8 +17,8 @@ let confettis = [];
  */
 function setup() {
   createCanvas(800, 600); // Set canvas size
-  const colorArray = [color(255,20,20), color(20,255,20), color(20,20,255)]; //store all confetti colors in array
- 
+  const colorArray = [color(255, 20, 20), color(20, 255, 20), color(20, 20, 255)]; //store all confetti colors in array
+
 
   // Create 50 confettis and store them in an array
   for (let i = 0; i < 50; i++) {
@@ -53,14 +53,14 @@ function draw() {
 
   //draw confetti popper where your curser would be
   push();
-fill(255);
-rect(mouseX,mouseY +50, 5,30);
-pop();
+  fill(255);
+  rect(mouseX, mouseY + 50, 5, 30);
+  pop();
 
-push();
-fill("red")
-rect(mouseX,mouseY +20, 20,40);
-pop();
+  push();
+  fill("red")
+  rect(mouseX, mouseY + 20, 20, 40);
+  pop();
 
 
 }
@@ -71,7 +71,7 @@ pop();
 function mouseClicked() {
   for (let c of confettis) {
     c.explode(mouseX, mouseY);
-}
+  }
 }
 
 // 
@@ -80,7 +80,7 @@ function mouseClicked() {
  */
 class confetti {
   // The constructor runs when a new object is created
-  constructor(x, y, size, speedx,speedy, colour) {
+  constructor(x, y, size, speedx, speedy, colour) {
     this.x = x; // x position
     this.y = y; // y position
     this.size = size; // diameter of the confetti
@@ -95,19 +95,19 @@ class confetti {
     fill(this.colour);
     ellipse(this.x, this.y, this.size, this.size);
   }
-    //moves the confettis after explosion
-    move() {
-    this.y += this.speedy 
-    this.x += this.speedx; 
+  //moves the confettis after explosion
+  move() {
+    this.y += this.speedy
+    this.x += this.speedx;
     this.speedy += 0.1; // gravity full confetti back down
-    }
-  
- //begin the confetti explosion
+  }
+
+  //begin the confetti explosion
   explode(x, y) {
     this.x = x + this.speedx;
     this.y = y += this.speedy;
-    this.speedx = random(-5,5);
-    this.speedy = random(-5,2);
+    this.speedx = random(-5, 5);
+    this.speedy = random(-5, 2);
     this.speedy -= 5; // confetti goes up because y is lowered
   }
 }
