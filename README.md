@@ -111,6 +111,21 @@ Prototyping: Instructions
 [view prototype 3 code here](https://github.com/yogurtdairy/CART253/blob/main/functions-prototype-3/template-p5-project/js/script.js)    |
 [view prototype 3 visual here](https://yogurtdairy.github.io/CART253/functions-prototype-3/template-p5-project/)
 
+# Prototyping: Arrays
+[reflective journals](https://github.com/yogurtdairy/CART253/blob/main/journal.md)
+
+### Prototype 1 - Snowfall
+![Snowfall](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-11-04%20184116.png?raw=true)
+
+[view prototype 1 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/arrays-prototype-1/template-p5-project/js/script.js)    |
+[view prototype 1 visual here](https://yogurtdairy.github.io/CART253/Topics/arrays-prototype-1/template-p5-project/)
+
+### Prototype 2 - Party Party Party
+![Party Party Party](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-11-04%20212857.png?raw=true)
+
+[view prototype 2 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/arrays-prototype-2/template-p5-project/js/script.js)    |
+[view prototype 2 visual here](https://yogurtdairy.github.io/CART253/Topics/arrays-prototype-2/template-p5-project/)
+
 
 
 
