@@ -49,12 +49,32 @@ function draw() {
     snowflakes[i].show();
     // Display the snowflakes
   }
+
+  noCursor();
+  rectMode(CENTER);
+
+  push();
+fill(255);
+rect(mouseX,mouseY +50, 5,30);
+pop();
+
+push();
+fill("red")
+rect(mouseX,mouseY +20, 20,40);
+pop();
+
+
 }
 
 function mouseClicked() {
   for (let c of snowflakes) {
     c.burst(mouseX, mouseY);
-}}
+}
+
+
+
+
+}
 
 // 
 /**
@@ -81,6 +101,7 @@ class snowflake {
     move() {
     this.y += this.speedy // Move down and slow/speed up
     this.x += this.speedx; // change wind direction
+    this.speedy += 0.1;
     }
   
 
