@@ -51,7 +51,7 @@ function draw() {
   noCursor();
   rectMode(CENTER);
 
-  //draws confetti popper where your curser would be
+  //draw confetti popper where your curser would be
   push();
 fill(255);
 rect(mouseX,mouseY +50, 5,30);
@@ -66,7 +66,7 @@ pop();
 }
 
 /**
- * Starts explode where your mouse clicked
+ * Start explode where your mouse clicked
  */
 function mouseClicked() {
   for (let c of confettis) {
@@ -102,7 +102,7 @@ class confetti {
     this.speedy += 0.1; // gravity full confetti back down
     }
   
- //begins the confetti explosion
+ //begin the confetti explosion
   explode(x, y) {
     this.x = x + this.speedx;
     this.y = y += this.speedy;
