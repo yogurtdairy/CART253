@@ -19,7 +19,7 @@ let windDirection = 0;
  */
 function setup() {
   createCanvas(800, 600); // Set canvas size
- 
+
 
   // Create 50 snowflakes and store them in an array
   for (let i = 0; i < 50; i++) {
@@ -78,14 +78,14 @@ class snowflake {
     fill(this.colour);
     ellipse(this.x, this.y, this.size);
   }
-    //move the snowflakes
-    move() {
+  //move the snowflakes
+  move() {
     this.y += this.speed + windDirection; // Move down and slow/speed up
     this.x += windDirection - 1; // change wind direction
     if (this.x > 820) this.x = -20;
     if (this.x < -20) this.x = 820; // reset snowflakes side to side + smoothing
 
-    if (this.y > height+20) {
+    if (this.y > height + 20) {
       this.y = -20; // reset snowflakes top to bottom + smoothing
     }
   }
