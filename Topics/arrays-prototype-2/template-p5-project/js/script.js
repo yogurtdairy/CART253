@@ -88,6 +88,7 @@ class snowflake {
     this.x = x + this.speedx;
     this.y = y += this.speedy;
     this.speedx = random(-5,5);
-    this.speedy = random(-5,5);
+    this.speedy = random(-5,2);
+    this.speedy -= 5;
   }
 }
