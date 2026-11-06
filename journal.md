@@ -37,6 +37,11 @@ This week was the week of unexpected surprises. My prototypes evolved in mysteri
 
 ![wowslider](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-10-28%20201429.png?raw=true)
 
+## November 5th
+I was very excited for this week's prototypes because (as I have mentioned in the past) I love using arrays in my p5 work. Even before taking this class, I have made two larger projects that both used classes and arrays. I think what I enjoy about class/array is the ability to make different particle-like effects such as snow and confetti because it is very visually appealing to me. For my 3 prototypes of the week I made all 3 feel connected to each other in a way, since all 3 start with the same canvas size, background color and use a class of ellipses to create some sort of particle effect. They could be viewed and interacted with all together connected length-wise, I think it makes for a fun overall experience. I also enjoyed this week because I got to introduce class to my classmate and friend Joel (Sydney) who had never used class before. He ended up loving classes and utilizing them for 2 of his 3 prototypes (I am spreading the gospel!) I also got to offer a helping hand with his first prototype since he was having some issues. Overall, I do think the lesson I chose to take out from the week is simply "do what you enjoy". At the end of the day, I am studying computation arts because I find certain aspects of programming very fun, especially all the artistic aspects, and so why would I hold myself back from programming in ways that bring me joy? While yes stepping out of your comfort zone is very necessary for learning, I believe if the process isn't fun it makes the process of learning feel discouraging even if you reach new places. In the future I will definitely use class/array again while continuing to add new skills onto it.
+
+
+
 
 
 
