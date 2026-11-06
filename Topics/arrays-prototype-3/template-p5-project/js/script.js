@@ -21,18 +21,22 @@ function setup() {
     createCanvas(800, 600); // Set canvas size
 
 
+
     // Create 50 snowflakes and store them in an array
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 200; i++) {
         let x = random(width); // random x position
         let y = random(height); // random y position
-        let size = random(10, 30); // random size
+        let size = random(10, 50); // random size
         //  let speed = random(2, 3.5); // random speed
         let velocityx = random(-1, 1);
         let velocityy = random(-1, 1);
+        let pink = color(255, 97, 160);
+        let blue = color(0, 0, 255);
+        let mapping = map(this.x, 0, width, 0, 1.0);
         let colour = random(170, 240); //random colour
 
         // Create a new snowflake object and add it to the array
-        snowflakes.push(new snowflake(x, y, size, velocityx, velocityy, colour));
+        snowflakes.push(new snowflake(x, y, size, velocityx, velocityy, pink, blue, mapping, colour));
     }
 }
 
@@ -58,7 +62,7 @@ function mouseMoved() {
     if (mouseX < 440) windDirection -= 0.20;
     if (windDirection < -1) windDirection = -1;
     if (windDirection > 7) windDirection = 7;
-    console.log(windDirection);
+
 }
 
 // 
@@ -67,26 +71,50 @@ function mouseMoved() {
  */
 class snowflake {
     // The constructor runs when a new object is created
-    constructor(x, y, size, velocityx, velocityy, colour) {
+    constructor(x, y, size, velocityx, velocityy, pink, blue, colour) {
         this.x = x; // x position
         this.y = y; // y position
         this.size = size; // diameter of the snowflake
         this.velocityx = velocityx;
         this.velocityy = velocityy;
+        this.pink = pink;
+        this.blue = blue;
+
         //  this.speed = speed; // fall speed
         this.colour = colour; //snowflake colour
     }
 
     // Draw the snowflakes
     show() {
+        this.mapping = map(this.x, 0, width, 0, 1.0);
         noStroke();
-        fill(this.colour);
+        fill(lerpColor(this.blue, this.pink, this.mapping));
         ellipse(this.x, this.y, this.size);
     }
     //move the snowflakes
     move() {
         this.x += this.velocityx;
         this.y += this.velocityy;
+
+        const d = dist(mouseX, mouseY, this.x, this.y);
+
+        if (d < this.size + 70) {
+
+            this.velocityx += (this.x - mouseX) * 0.5;
+            this.velocityy += (this.y - mouseY) * 0.5;
+        }
+
+
+
+
+
+        if (this.velocityx > 1) { this.velocityx = random(0, 10) }
+        if (this.velocityy > 1) { this.velocityy = random(0, 10) }
+        if (this.velocityx < -1) { this.velocityx = random(-10, 0) }
+        if (this.velocityy < -1) { this.velocityy = random(-10, 0) }
+
+
+
     }
 
     collision() {
@@ -103,4 +131,5 @@ class snowflake {
             this.velocityy = this.velocityy * -1
         }
     }
+
 }
