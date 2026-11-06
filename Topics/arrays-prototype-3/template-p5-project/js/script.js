@@ -1,5 +1,5 @@
 /**
- * Snowfall
+ * My bubbles hate me
  * Nicole Tanev
  * 
  * blue and pink bubbles that float around in a space! they run away from your curser
