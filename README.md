@@ -126,6 +126,12 @@ Prototyping: Instructions
 [view prototype 2 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/arrays-prototype-2/template-p5-project/js/script.js)    |
 [view prototype 2 visual here](https://yogurtdairy.github.io/CART253/Topics/arrays-prototype-2/template-p5-project/)
 
+### Prototype 3 - My bubbles hate me
+![My bubbles hate me](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-11-05%20214016.png?raw=true)
+
+[view prototype 3 code here](https://github.com/yogurtdairy/CART253/blob/main/Topics/arrays-prototype-3/template-p5-project/js/script.js)    |
+[view prototype 3 visual here](https://yogurtdairy.github.io/CART253/Topics/arrays-prototype-3/template-p5-project/)
+
 
 
 
