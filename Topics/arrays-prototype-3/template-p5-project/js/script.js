@@ -52,6 +52,7 @@ function draw() {
         snowflakes[i].move();
         snowflakes[i].show();
         snowflakes[i].collision();
+        snowflakes[i].repulsion();
         // Display the snowflakes
     }
 }
@@ -96,23 +97,24 @@ class snowflake {
         this.x += this.velocityx;
         this.y += this.velocityy;
 
+
+
+    }
+
+    repulsion() {
         const d = dist(mouseX, mouseY, this.x, this.y);
 
-        if (d < this.size + 70) {
+        if (d < this.size + 50) {
 
             this.velocityx += (this.x - mouseX) * 0.5;
             this.velocityy += (this.y - mouseY) * 0.5;
         }
 
 
-
-
-
         if (this.velocityx > 1) { this.velocityx = random(0, 10) }
         if (this.velocityy > 1) { this.velocityy = random(0, 10) }
         if (this.velocityx < -1) { this.velocityx = random(-10, 0) }
         if (this.velocityy < -1) { this.velocityy = random(-10, 0) }
-
 
 
     }
