@@ -17,7 +17,7 @@ let langData = undefined;
 let lang = "fr";
 
 // Starts with the instruction
-let birdGovernment = "Click to generate a car name.";
+let birdGovernment = "Click to generate an animal government";
 
 /**
  * Load the car and dinosaur data
