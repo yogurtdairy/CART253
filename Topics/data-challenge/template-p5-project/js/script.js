@@ -23,6 +23,8 @@ let carName = "Click to generate a car name.";
  * Load the car and dinosaur data
  */
 async function preload() {
+    birds = await loadJSON("assets/data/birds_north_america.json");
+    governments = await loadJSON("assets/data/governmentsForms.json");
 
 }
 
@@ -31,7 +33,7 @@ async function preload() {
 */
 async function setup() {
     createCanvas(600, 400);
-    
+
     await preload();
 }
 
