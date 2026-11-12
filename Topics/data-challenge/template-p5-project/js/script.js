@@ -11,20 +11,20 @@
 
 "use strict";
 
-let carData = undefined;
-let dinosaurData = undefined;
+let birdsData = undefined;
+let governmentsData = undefined;
 let langData = undefined;
 let lang = "fr";
 
 // Starts with the instruction
-let carName = "Click to generate a car name.";
+let birdGovernment = "Click to generate a car name.";
 
 /**
  * Load the car and dinosaur data
  */
 async function preload() {
-    birds = await loadJSON("assets/data/birds_north_america.json");
-    governments = await loadJSON("assets/data/governmentsForms.json");
+    birdsData = await loadJSON("assets/data/common.json");
+    governmentsData = await loadJSON("assets/data/governmentForms.json");
 
 }
 
@@ -47,7 +47,7 @@ function draw() {
     fill("pink");
     textAlign(CENTER, CENTER);
     textSize(32);
-    text(carName, width / 2, height / 2);
+    text(birdGovernment, width / 2, height / 2);
     pop();
 }
 
@@ -55,5 +55,11 @@ function draw() {
  * Generate a new car name
  */
 function mousePressed() {
+
+    const bird = random(birdsData.animals);
+    // Pick a sport
+    const government = random(governmentsData.governmentForms);
+    birdGovernment = bird + " " + government;
+    birdGovernment = birdGovernment.replace(" ", "\n");
 
 }
