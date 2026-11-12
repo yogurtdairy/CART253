@@ -1,5 +1,5 @@
 /**
- * Terrible New Car
+ * Awesome animal civilisations
  * Pippin Barr
  * 
  * A program to generate new car model names using dinosaurs.
