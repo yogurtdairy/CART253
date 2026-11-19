@@ -11,17 +11,24 @@
 
 let bacteria = [];
 
+let hazard = [];
+
 
 function setup() {
 
     createCanvas(600, 600);
     bacteria.push(new Bacteria(1000, 1000, 10, 0.05));
 
+    hazard.push(new Hazard(200, 200, 200));
+
 }
 
 function draw() {
     background(200);
 
+    for (let i = 0; i < hazard.length; i++) {
+        hazard[i].draw();
+    }
 
 
     for (let i = 0; i < bacteria.length; i++) {
@@ -31,6 +38,8 @@ function draw() {
         bacteria[i].draw();
         bacteria[i].ouch();
 
+
+
         if (bacteria[i].x < 0) {
             bacteria.splice(i, 1);
         } else if (bacteria[i].lifespan < 0) {
@@ -38,11 +47,7 @@ function draw() {
         }
     }
 
-    push();
-    fill("red");
-    ellipse(200, 200, 200);
 
-    pop();
 
 }
 
@@ -53,12 +58,15 @@ class Bacteria {
         this.y = y;
         this.size = size;
         this.growing = growing;
-        this.color = color(0, 216, 85, 150);
+        this.color = color(0, 216, 85);
         this.lifespan = random(200, 1000);
+        this.alpha = 200
     }
 
     grow() {
         this.size += this.growing;
+        this.color.setAlpha(this.alpha);
+        this.alpha -= random(0.008, 0.5);
 
     }
 
@@ -94,6 +102,26 @@ class Bacteria {
 
     }
 
+
+}
+
+class Hazard {
+    constructor(x, y, size) {
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.color = color("red")
+    }
+
+
+    draw() {
+
+        push();
+        fill("red");
+        ellipse(this.x, this.y, this.size);
+
+
+    }
 
 }
 
