@@ -33,6 +33,8 @@ function draw() {
 
         if (bacteria[i].x < 0) {
             bacteria.splice(i, 1);
+        } else if (bacteria[i].lifespan < 0) {
+            bacteria.splice(i, 1);
         }
     }
 
@@ -52,6 +54,7 @@ class Bacteria {
         this.size = size;
         this.growing = growing;
         this.color = color(0, 216, 85, 150);
+        this.lifespan = random(200, 1000);
     }
 
     grow() {
@@ -72,6 +75,7 @@ class Bacteria {
     move() {
         this.x += random(-5, 5);
         this.y += random(-5, 5);
+        this.lifespan--;
     }
 
     draw() {
@@ -93,9 +97,3 @@ class Bacteria {
 
 }
 
-//for (let i = 0; i < bacteria.length; i++) {
-//      bacteria.splice(i, 1);
-//  }
-
-//const d = dist(this.x, this.y, 200, 200);
-//  const overlap = (d < this.size / 2 + 200 / 2);
