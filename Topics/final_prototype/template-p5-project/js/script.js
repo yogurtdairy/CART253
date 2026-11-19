@@ -9,6 +9,10 @@
 "use strict";
 
 
+
+
+
+
 let bacteria = [];
 
 let hazard = [];
@@ -21,13 +25,14 @@ function setup() {
 
     hazard.push(new Hazard(200, 200, 200));
 
+
 }
 
 function draw() {
     background(200);
 
     for (let i = 0; i < hazard.length; i++) {
-        hazard[i].draw();
+        hazard[i].draw(bacteria);
     }
 
 
@@ -36,7 +41,7 @@ function draw() {
         bacteria[i].spawnNew();
         bacteria[i].move();
         bacteria[i].draw();
-        bacteria[i].ouch();
+        bacteria[i].ouch(hazard);
 
 
 
@@ -72,7 +77,6 @@ class Bacteria {
 
     spawnNew() {
         if (mouseIsPressed) {
-            console.log(random(1))
             if (random(1) < 0.02) {
                 let baby = new Bacteria(mouseX + random(-10, 10), mouseY + random(-10, 10), random(0, 10), this.growing);
                 bacteria.push(baby);
@@ -92,12 +96,18 @@ class Bacteria {
         ellipse(this.x, this.y, this.size);
     }
 
-    ouch() {
-        const d = dist(this.x, this.y, 200, 200);
-        const overlap = (d < this.size / 2 + 200 / 2);
+    ouch(hazard) {
 
-        if (overlap) {
-            this.x = -1;
+        for (let b of hazard) {
+
+            const d = dist(this.x, this.y, b.x, b.y);
+            const overlap = (d < this.size / 2 + b.size / 2);
+
+
+            if (overlap) {
+                this.x = -1;
+            }
+
         }
 
     }
@@ -123,5 +133,14 @@ class Hazard {
 
     }
 
+
 }
+
+function keyPressed() {
+    console.log("hi")
+    let hazardbaby = new Hazard(random(0, 600), random(0, 600), random(50, 200));
+    hazard.push(hazardbaby);
+
+}
+
 
