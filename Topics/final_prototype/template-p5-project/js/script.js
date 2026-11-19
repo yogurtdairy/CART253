@@ -29,7 +29,19 @@ function draw() {
         bacteria[i].spawnNew();
         bacteria[i].move();
         bacteria[i].draw();
+        bacteria[i].ouch();
+
+        if (bacteria[i].x < 0) {
+            bacteria.splice(i, 1);
+        }
     }
+
+    push();
+    fill("red");
+    ellipse(200, 200, 200);
+
+    pop();
+
 }
 
 
@@ -58,8 +70,8 @@ class Bacteria {
     }
 
     move() {
-        this.x += random(-2, 2);
-        this.y += random(-2, 2);
+        this.x += random(-5, 5);
+        this.y += random(-5, 5);
     }
 
     draw() {
@@ -67,4 +79,23 @@ class Bacteria {
         fill(this.color);
         ellipse(this.x, this.y, this.size);
     }
+
+    ouch() {
+        const d = dist(this.x, this.y, 200, 200);
+        const overlap = (d < this.size / 2 + 200 / 2);
+
+        if (overlap) {
+            this.x = -1;
+        }
+
+    }
+
+
 }
+
+//for (let i = 0; i < bacteria.length; i++) {
+//      bacteria.splice(i, 1);
+//  }
+
+//const d = dist(this.x, this.y, 200, 200);
+//  const overlap = (d < this.size / 2 + 200 / 2);
