@@ -23,7 +23,7 @@ function setup() {
     createCanvas(600, 600);
     bacteria.push(new Bacteria(1000, 1000, 10, 0.05));
 
-    hazard.push(new Hazard(200, 200, 200));
+    hazard.push(new Hazard(600, 600, 200));
 
 
 }
@@ -33,6 +33,11 @@ function draw() {
 
     for (let i = 0; i < hazard.length; i++) {
         hazard[i].draw(bacteria);
+        hazard[i].move();
+
+        if (hazard[i].x < -20) {
+            hazard.splice(i, 1);
+        }
     }
 
 
@@ -78,7 +83,7 @@ class Bacteria {
     spawnNew() {
         if (mouseIsPressed) {
             if (random(1) < 0.02) {
-                let baby = new Bacteria(mouseX + random(-10, 10), mouseY + random(-10, 10), random(0, 10), this.growing);
+                let baby = new Bacteria(mouseX + random(-10, 10), mouseY + random(-10, 10), random(0, 10), this.growing, random(-1, 1), random(-1, 1));
                 bacteria.push(baby);
             }
         }
@@ -106,6 +111,13 @@ class Bacteria {
 
             if (overlap) {
                 this.x = -1;
+
+                b.size += 0.1;
+
+                if (b.size > 200) {
+                    b.x = -100;
+
+                }
             }
 
         }
@@ -116,11 +128,14 @@ class Bacteria {
 }
 
 class Hazard {
-    constructor(x, y, size) {
+    constructor(x, y, size, velocityx, velocityy) {
         this.x = x;
         this.y = y;
         this.size = size;
         this.color = color("red")
+        this.velocityx = velocityx
+        this.velocityy = velocityy
+
     }
 
 
@@ -133,12 +148,30 @@ class Hazard {
 
     }
 
+    move() {
+        this.x += this.velocityx
+        this.y += this.velocityy
+
+        if (this.x > width) {
+            this.velocityx = this.velocityx * -1 //right wall
+        }
+        if (this.x < 0) {
+            this.velocityx = this.velocityx * -1 //left wall
+        }
+        if (this.y > height) {
+            this.velocityy = this.velocityy * -1 //upper wall
+        }
+        if (this.y < 0) {
+            this.velocityy = this.velocityy * -1 //lower wall
+        }
+    }
+
 
 }
 
 function keyPressed() {
     console.log("hi")
-    let hazardbaby = new Hazard(random(0, 600), random(0, 600), random(50, 200));
+    let hazardbaby = new Hazard(random(0, 600), random(0, 600), random(5, 20), random(-1, 1), random(-1, 1));
     hazard.push(hazardbaby);
 
 }
