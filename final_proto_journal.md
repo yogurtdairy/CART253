@@ -1,61 +1,14 @@
-# Reflective journal
+# Final Prototype Reflective journal
 
-## September 17th
-I will rewrite this entry because I lost the old one
-
-## September 23rd
-My process of making my prototypes ended up becoming much more tedious than anticipated after I ran into the very peculiar situation of one of my commits completely disappearing and taking a lot of my progress from last week down with it. I spend a lot of time trying to fix this by talking with Pippin and classmates on the discord server, and also doing my own research on the internet and trying anything (to no avail). I have decided that it is easier for me to just remake what I have lost than spend even more hours trying to find something that has vanished. As for the prototypes themselves, I had a much more pleasant experience making them. I tried making all 3 of them very different from each other, with my prototype 2 being more artistic and visual, my prototype 3 being more game-like, and my prototype 1 being my most experimental one. I have past JavaScript experience so I wanted to slightly incorporate some variable features into my prototypes whilst still mainly focusing on experimenting with the visual elements of p5. I made my prototype 3 interactive because the yoyo and string follow the curser, which was really easy to do but incredibly effective and memorable in my opinion. In the future I am probably most interested in developing my prototype 1 as I had already started drafting code to make the slot machine interactive but I never finished it so I just decided to comment it out for now. 
-
-![unused code](https://raw.githubusercontent.com/yogurtdairy/CART253/cad7ac5d332ad1bbddca7529967a89876edfe498/images/Screenshot%202026-09-23%20221821.png)
-
-## September 30th
-This week thankfully my experience making my prototype was much more forgiving. I had no issues with my commits and no issues with GitHub pages not loading properly.  Even still, I took a lot of screenshots of the GitHub pages working properly in case something were to break by the due date. My first prototype looks the simplest as I mostly focused on making a loop, but it probably took me the longest since I spent a lot of time placing every element (especially those triamngles) at the right spot to acheive symmetry. Funny enough, this time around all of my prototypes began with one idea that shifted as I was working on them until the final product for all 3 was very different from what I had originally planned. My drawing machine for instance was not supposed to be inspired so much by the examples we saw in class, but rather I wanted to make a garden of flowers that grow wherever you click and change colors. As I was working on this idea though I saw that I saw slowly moving towards a drawing program-like prototype and I decided to stick with that. I believe I am usually much more end result focused when making my projects and I rarely shift my ideas as much as I did this time around, but I do quite enjoy this more experimental approach.
+## Final Prototype week 1
 
 
-![proof that pages was working as of sept 30th](https://raw.githubusercontent.com/yogurtdairy/CART253/214ee21f3a06c4f621d379e845ef9403150b776e/images/Screenshot%202026-09-30%20193541.png)
-proof that pages was working as of sept 30th
-
-## October 8th
-This week's process was my smoothest yet, with pages fully collaborating with me and Visual Studio displaying things properly in chrome (yes I did use mostly Visual Studio this time around, with sparse use of p5 to reference some of my older code + Pippin's examples). All 3 of my prototypes ended up being game-like, which was not my original plan. For my third prototype I wanted to make a self contained simulation of mold that grows and has it's behavior influenced by if statements (like eating), but I had a lot of trouble getting the mold to behave as I wanted it to. I think I will keep this idea in the back of my mind for the future because I think this will be much easier to achieve using arrays (I like arrays). I also got to develop my slot machine prototype from the first week by referencing the probability code from Pippin (thank you!!). I am happy with how it works, especially how rare winning the highest prize is (0.000001%) because it is an accurate representation of gambling. The only thing I wish I did differently was making the slot machine roll on click instead of on refresh, because it is incredibly unintuitive right now. Maybe I will make changes to this prototype again in the future, stay tuned!
-I really like conditionals because they make the prototypes feel much more interactive. My last few weeks' prototypes were for the most part doing their own thing in a linear pattern or loop, but now every one of them relies on user interaction (and randomization/probability) to make the magic happen. I think the deeper we go into exploring the different features of JavaScript, the more interactivity we will get to add to our projects, and I am very excited!
-
-![I want to add this](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-10-08%20162158.png?raw=true)
-This is how I want my slot machine to be activated
+## Final Prototype week 2
 
 
-![gambling](https://github.com/yogurtdairy/CART253/blob/main/images/gambling.jpg?raw=true)
-
-## October 22nd
-These last two weeks have been hectic, as October always tends to be for me. I apologize for the last minute submission and I myself wish it did not come to this but alas things happen (and in general I do not like asking for extensions except in case of actual emergencies.) Once again I worked on my slot machine this week, adding even more features to enhance the gambling experience. I think I should mention that the reason I keep developing this specific prototype as opposed to any of my others is because this was a project idea I had thought of back when I was in CEGEP and just starting off with JavaScript. With my current knowledge at the time I was unfortunately unable to code a functional slot machine, and so I was naturally disappointed. Now that I am able to achieve what past me could not, I am very excited to develop this project that was until now beyond my reach! ( Side tangent, I do not promote gambling okay? okay.. I like the idea of make-belief gambling systems without any real money involved. I hope for people who use my slot machine to learn a lesson on the destructive cycles of gambling rather than them getting interested in gambling. That is also why I implemented a debt system, to show how gambling has quantifiable consequences. I myself am someone prone to getting hooked on the quick dopamine reward systems used in casino games, so this is a subject I genuinely care about beyond the jokes that I make. Gambling is not rewarding on the long run. Okay, tangent over. ) As for my second and third prototype, both of them were inspired by example code from Pippin, with my own spin on it. The track and field prototype utilized the movement mechanics, but I wondered what I could make if I restrained the movement to only one direction/key. Thus, the idea of a race came into mind. As for the egg timer, I really wanted to make a practical use prototype rather than another game-based one. I am notoriously not the best cook, so things like timers are a godsent. I also wanted it to have a visual element to illustrate the cooking process, and I am very happy with the overall results. Maybe one day I will test it out when hard-boiling eggs...
-
-![gambling](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-10-22%20234808.png?raw=true)
-
-Pictured above is a screenshot from my gameplay of the game Price Is Right Plinko, my favorite "gambling" game without real money. I might code a Plinko game someday, I think it could be fun and challenging to experiment with ball bounce physics.
-
-## October 29th
-This week was the week of unexpected surprises. My prototypes evolved in mysterious ways as I was working on them and they always ended up doing something completely different from what I had in mind. For my first prototype I was thinking of making a pair of eyes that follow the cursor, but I became annoyed at my inability to make the iris/pupils move separately. I did get it to track really nicely so I decided to go crazy with the movement to make the eyes look like they're dancing instead. I have no idea what purpose this prototype would serve beyond being entertaining, but that's okay, not everything needs to be a game. My second prototype was the one that ended up surprising me the most... I wanted to create my one slider using mapping so I wrote a createSlider() function that would serve as my container for the code I would write. I then ran my project to see if it had not broken, and to my surprise a fully functional slider had appeared without me doing much of anything. I looked it up and apparently createSlider() is already a built-in function in the p5 library.. and I had stumbled upon it by complete accident! P5 is truly wonderful, I learn so much each time. After this discovery, I decided instead to make something using this built-in slider. A true happy accident! Finally, for my last prototype I wanted to modify some of my older code to include parameters (Refactoring?), but once again my original idea of there being multiple enemies with a mind of their own did not work as they all shared the same x and y values, even with noise. Instead, I realized them overlapping would make the score decrease faster, so I decided to keep that as a mechanic. The more enemies the player overlaps with (aka the closer you are to the center), the more health you will lose. This makes the game less punishing if the enemy only grazes you. I think coding is a collection of happy accidents like these because you never really know if what you are writing in code will have the visual effect that you think it will, and things not going according to plan is an occasion to use your creativity to invent new solutions. Wonderful! 
-
-![wowslider](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-10-28%20201429.png?raw=true)
-
-## November 5th
-I was very excited for this week's prototypes because (as I have mentioned in the past) I love using arrays in my p5 work. Even before taking this class, I have made two larger projects that both used classes and arrays. I think what I enjoy about class/array is the ability to make different particle-like effects such as snow and confetti because it is very visually appealing to me. For my 3 prototypes of the week I made all 3 feel connected to each other in a way, since all 3 start with the same canvas size, background color and use a class of ellipses to create some sort of particle effect. They could be viewed and interacted with all together connected length-wise, I think it makes for a fun overall experience. I also enjoyed this week because I got to introduce class to my classmate and friend Joel (Sydney) who had never used class before. He ended up loving classes and utilizing them for 2 of his 3 prototypes (I am spreading the gospel!) I also got to offer a helping hand with his first prototype since he was having some issues. Overall, I do think the lesson I chose to take out from the week is simply "do what you enjoy". At the end of the day, I am studying computation arts because I find certain aspects of programming very fun, especially all the artistic aspects, and so why would I hold myself back from programming in ways that bring me joy? While yes stepping out of your comfort zone is very necessary for learning, I believe if the process isn't fun it makes the process of learning feel discouraging even if you reach new places. In the future I will definitely use class/array again while continuing to add new skills onto it.
-
-![discord convo 1](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-11-05%20221026.png?raw=true)
-
-![discord convo 2](https://github.com/yogurtdairy/CART253/blob/main/images/Screenshot%202026-11-05%20220753.png?raw=true)
+## Presentation week
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+## Final submission week
 
 
