@@ -1,17 +1,5 @@
-/**
- * Party Party Party
- * Nicole Tanev
- * 
- * Make bacteria fall using a popper! It is an infinite supply, amazing!
- * referenced array prototype 1 (Snowfall)
- */
 
 "use strict";
-
-
-
-
-
 
 let bacteria = [];
 
