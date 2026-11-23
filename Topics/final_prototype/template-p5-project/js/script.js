@@ -17,7 +17,7 @@ function setup() {
 }
 
 function draw() {
-    background(200);
+    background(255);
 
     for (let i = 0; i < hazard.length; i++) {
         hazard[i].draw(bacteria);
@@ -102,7 +102,7 @@ class Bacteria {
             const d = dist(this.x, this.y, b.x, b.y);
             const overlap = (d < this.size / 2 + b.size / 2);
 
-            if (overlap) {
+            if (overlap && this.size - 10 < b.size) {
                 this.x = -1;
 
                 b.size += 0.1;
