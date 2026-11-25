@@ -39,6 +39,7 @@ function draw() {
         bacteria[i].move();
         bacteria[i].draw();
         bacteria[i].ouch(hazard);
+        bacteria[i].reproduction();
 
 
 
@@ -126,6 +127,14 @@ class Bacteria {
         }
 
 
+
+    }
+
+    reproduction() {
+        if (this.size > 30 && this.lifespan > 500) {
+            let baby = new Bacteria(this.x + random(-10, 10), this.y + random(-10, 10), random(0, 10), this.growing, random(-1, 1), random(-1, 1));
+            bacteria.push(baby);
+        }
 
     }
 
