@@ -9,9 +9,9 @@ let hazard = [];
 function setup() {
 
     createCanvas(600, 600);
-    bacteria.push(new Bacteria(1000, 1000, 10, 0.05));
+    bacteria.push(new Bacteria(100, 100, 10, 0.05));
 
-    hazard.push(new Hazard(600, 600, 200));
+    hazard.push(new Hazard(200, 200, 200));
 
 
 }
@@ -28,6 +28,10 @@ function draw() {
         }
 
         if (hazard[i].energy < 0) {
+            hazard.splice(i, 1);
+        }
+
+        if (hazard[i].alpha < 0) {
             hazard.splice(i, 1);
         }
     }
@@ -48,6 +52,8 @@ function draw() {
         } else if (bacteria[i].lifespan < 0) {
             bacteria.splice(i, 1);
         }
+
+
     }
 
 
@@ -106,8 +112,8 @@ class Bacteria {
             if (overlap && this.size - 10 < b.size) {
                 this.x = -1;
 
-                b.size += 0.1;
-                b.energy += 1;
+                b.size += 0.2;
+                b.energy += 2;
                 b.alpha += 1;
 
                 if (b.energy > 300) {
@@ -191,7 +197,7 @@ class Hazard {
 
 function keyPressed() {
     console.log("hi")
-    let hazardbaby = new Hazard(random(0, 600), random(0, 600), random(10, 35), random(-1, 1), random(-1, 1), 200);
+    let hazardbaby = new Hazard(random(0, 600), random(0, 600), random(10, 35), random(-1.5, 1.5), random(-1.5, 1.5), 200);
     hazard.push(hazardbaby);
 
 }
