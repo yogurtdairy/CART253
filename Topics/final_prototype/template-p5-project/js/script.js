@@ -11,7 +11,7 @@ function setup() {
     createCanvas(600, 600);
     bacteria.push(new Bacteria(100, 100, 10, 0.05));
 
-    hazard.push(new Hazard(200, 200, 200));
+    hazard.push(new Hazard(200, 200, 50, 1, 1, 200));
 
 
 }
@@ -19,25 +19,35 @@ function setup() {
 function draw() {
     background(255);
 
-    for (let i = 0; i < hazard.length; i++) {
-        hazard[i].draw(bacteria);
+
+    for (let i = hazard.length - 1; i >= 0; i--) {
+        hazard[i].draw();
         hazard[i].move();
+
+
+        let intersect = false;
+        for (let j = 0; j < hazard.length; j++) {
+            if (i != j && hazard[i].intersects(hazard[j])) {
+                intersect = true;
+            }
+        }
+        if (intersect) {
+            console.log("birth");
+        }
+
 
         if (hazard[i].x < -20 || hazard[i].energy < 0 || hazard[i].alpha < 0) {
             hazard.splice(i, 1);
         }
     }
 
-
-    for (let i = 0; i < bacteria.length; i++) {
+    for (let i = bacteria.length - 1; i >= 0; i--) {
         bacteria[i].grow();
         bacteria[i].spawnNew();
         bacteria[i].move();
         bacteria[i].draw();
         bacteria[i].ouch(hazard);
         bacteria[i].reproduction();
-
-
 
         if (bacteria[i].x < 0 || bacteria[i].x > 600 || bacteria[i].y > 600 || bacteria[i].y < 0) {
             bacteria.splice(i, 1);
@@ -46,6 +56,29 @@ function draw() {
         }
     }
 }
+
+
+for (let i = 0; i < bacteria.length; i++) {
+    bacteria[i].grow();
+    bacteria[i].spawnNew();
+    bacteria[i].move();
+    bacteria[i].draw();
+    bacteria[i].ouch(hazard);
+    bacteria[i].reproduction();
+
+
+
+    if (bacteria[i].x < 0 || bacteria[i].x > 600 || bacteria[i].y > 600 || bacteria[i].y < 0) {
+        bacteria.splice(i, 1);
+    } else if (bacteria[i].lifespan < 0) {
+        bacteria.splice(i, 1);
+    }
+
+
+}
+
+
+
 
 
 class Bacteria {
@@ -177,14 +210,28 @@ class Hazard {
         }
     }
 
+    intersects(otherhazard) {
+
+        const d = dist(this.x, this.y, otherhazard.x, otherhazard.y);
+        const overlap = (d < this.size / 2 + otherhazard.size / 2);
+
+        if (overlap) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
 
 }
 
 function keyPressed() {
-    console.log("hi")
-    let hazardbaby = new Hazard(random(0, 600), random(0, 600), random(10, 35), random(-1.5, 1.5), random(-1.5, 1.5), 200);
-    hazard.push(hazardbaby);
 
+    for (let i = 0; i < 5; i++) {
+        let hazardbaby = new Hazard(random(0, 600), random(0, 600), random(10, 35), random(-1.5, 1.5), random(-1.5, 1.5), 200);
+        hazard.push(hazardbaby);
+    }
 }
 
 
