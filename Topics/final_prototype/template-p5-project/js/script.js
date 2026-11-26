@@ -23,15 +23,7 @@ function draw() {
         hazard[i].draw(bacteria);
         hazard[i].move();
 
-        if (hazard[i].x < -20) {
-            hazard.splice(i, 1);
-        }
-
-        if (hazard[i].energy < 0) {
-            hazard.splice(i, 1);
-        }
-
-        if (hazard[i].alpha < 0) {
+        if (hazard[i].x < -20 || hazard[i].energy < 0 || hazard[i].alpha < 0) {
             hazard.splice(i, 1);
         }
     }
@@ -47,17 +39,12 @@ function draw() {
 
 
 
-        if (bacteria[i].x < 0) {
+        if (bacteria[i].x < 0 || bacteria[i].x > 600 || bacteria[i].y > 600 || bacteria[i].y < 0) {
             bacteria.splice(i, 1);
         } else if (bacteria[i].lifespan < 0) {
             bacteria.splice(i, 1);
         }
-
-
     }
-
-
-
 }
 
 
@@ -131,8 +118,6 @@ class Bacteria {
             }
 
         }
-
-
 
     }
 
