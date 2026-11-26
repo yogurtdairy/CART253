@@ -39,6 +39,11 @@ function draw() {
         if (hazard[i].x < -20 || hazard[i].energy < 0 || hazard[i].alpha < 0) {
             hazard.splice(i, 1);
         }
+
+        if (intersect && random(1) < 0.02) {
+            let hazardbaby = new Hazard(hazard[i].x + random(-10, 10), hazard[i].y + random(-10, 10), random(10, 35), random(-1.5, 1.5), random(-1.5, 1.5), 200);
+            hazard.push(hazardbaby);
+        }
     }
 
     for (let i = bacteria.length - 1; i >= 0; i--) {
@@ -55,6 +60,8 @@ function draw() {
             bacteria.splice(i, 1);
         }
     }
+
+
 }
 
 
@@ -213,7 +220,7 @@ class Hazard {
     intersects(otherhazard) {
 
         const d = dist(this.x, this.y, otherhazard.x, otherhazard.y);
-        const overlap = (d < this.size / 2 + otherhazard.size / 2);
+        const overlap = (d < this.size / 2 + otherhazard.size / 2 && this.size > 40 && otherhazard.size > 40);
 
         if (overlap) {
             return true;
@@ -221,12 +228,14 @@ class Hazard {
             return false;
         }
 
+
     }
 
 
 }
 
 function keyPressed() {
+
 
     for (let i = 0; i < 5; i++) {
         let hazardbaby = new Hazard(random(0, 600), random(0, 600), random(10, 35), random(-1.5, 1.5), random(-1.5, 1.5), 200);
